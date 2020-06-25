@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 
 import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 
-import { routeNamesMap } from "constants/globalConstants";
+import { routeNamesMap } from "constants/constants";
 
 import Header from "components/Header";
 import Footer from "components/Footer";
