@@ -11,7 +11,7 @@ const EnglishPuzzle = () => {
     <div className="english-puzzle">
       <Switch>
         <Route exact path={`${match}/`}>
-          <StartScreen link={`${match}game`} />
+          <StartScreen link={`${match}/game`} />
         </Route>
         <Route path={`${match}/game`} component={GameContainer} />
       </Switch>
