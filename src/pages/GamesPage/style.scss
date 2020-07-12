@@ -1,0 +1,11 @@
+.games{
+
+  &__card-deck{
+    justify-content: center;
+  }
+  &__card{
+    min-width: 250px;
+    max-width: 500px;
+    margin-top: 15px;
+  }
+}

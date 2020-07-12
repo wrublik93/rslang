@@ -21,6 +21,7 @@ import AudioChallenge from "pages/AudioChallenge";
 import OurCustomGame from "pages/OurCustomGame";
 import PageNotFound from "pages/PageNotFound";
 import Sprint from "pages/Sprint";
+import GamesPage from "pages/GamesPage";
 
 const handleChange = (routeName) => {
   if (routeName) {
@@ -44,6 +45,7 @@ export default function App() {
         <Switch>
           <Route exact path="/" component={Registration} />
           <Route path="/home" component={Home} />
+          <Route path="/games" component={GamesPage} />
           <Route path="/aboutUs" component={AboutUs} />
           <Route path="/vocabulary" component={Vocabulary} />
           <Route path="/statistic" component={Statistic} />

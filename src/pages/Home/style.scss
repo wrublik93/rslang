@@ -1,3 +1,15 @@
 .home {
-  display: flex;
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+  &__card {
+    min-width: 250px;
+    max-width: 500px;
+    margin-top: 15px;
+  }
+
+  &__card-deck {
+    justify-content: center;
+  }
 }
