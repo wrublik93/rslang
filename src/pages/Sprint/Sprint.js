@@ -1,9 +1,41 @@
-import React from "react";
-
-import "pages/Sprint/style.scss";
+import React, { useState } from "react";
+import GameSprint from "./components/GameSprint";
+import StartPageSprint from "./components/StartPageSprint";
+import GameOverSprint from "./components/GameOverSprint";
+import "./style.scss";
 
 const Sprint = () => {
-  return <div className="sprint">здесь будет приложение Sprint</div>;
+  const [startGame, setStartGame] = useState(false);
+  const [rightAnswers, setRightAnswers] = useState([]);
+  const [wrongAnswers, setWrongAnswers] = useState([]);
+  const [endGame, setEndGame] = useState(false);
+  const [resultScore, setResultScore] = useState(0);
+  const [level, setLevel] = useState(0);
+
+  return (
+    <div className="sprint">
+      {!startGame && !endGame && (
+        <StartPageSprint setStartGame={setStartGame} setLevel={setLevel} />
+      )}
+      {startGame && !endGame && (
+        <GameSprint
+          level={level}
+          startGame={startGame}
+          setRightAnswers={(word) => setRightAnswers([...rightAnswers, word])}
+          setWrongAnswers={(word) => setWrongAnswers([...wrongAnswers, word])}
+          setEndGame={setEndGame}
+          setResultScore={setResultScore}
+        />
+      )}
+      {startGame && endGame && (
+        <GameOverSprint
+          resultScore={resultScore}
+          rightAnswers={rightAnswers}
+          wrongAnswers={wrongAnswers}
+        />
+      )}
+    </div>
+  );
 };
 
 export default Sprint;
