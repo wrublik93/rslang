@@ -55,7 +55,7 @@ const GameSprint = ({
 
   useEffect(() => {
     const getWords = async () => {
-      const fetchData = getData(level);
+      const fetchData = getData(level, 6);
       const newWords = await fetchData();
       setWords(newWords);
       const current = newWords[newWords.length - 1];

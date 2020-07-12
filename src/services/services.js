@@ -28,12 +28,12 @@ export const loginUser = async (user) => {
   const content = await rawResponse.json();
   return content;
 };
-export const getData = (level) => {
+export const getData = (level, numberPage) => {
   let items = [];
   let group = 0;
   const requestSprint = "https://afternoon-falls-25894.herokuapp.com/words?";
   const wordsData = async () => {
-    if (group > 6) return items;
+    if (group > numberPage) return items;
     const urlWords = `${requestSprint}page=${level}&group=${group}`;
     const responseWords = await fetch(urlWords);
     const words = await responseWords.json();

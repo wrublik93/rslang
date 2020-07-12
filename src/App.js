@@ -17,10 +17,10 @@ import SpeakIt from "pages/SpeakIt";
 import EnglishPuzzle from "pages/EnglishPuzzle";
 import Savanna from "pages/Savanna";
 import AudioChallenge from "pages/AudioChallenge";
-
 import OurCustomGame from "pages/OurCustomGame";
 import PageNotFound from "pages/PageNotFound";
 import Sprint from "pages/Sprint";
+import EnglishTest from "pages/EnglishTest";
 import GamesPage from "pages/GamesPage";
 
 const handleChange = (routeName) => {
@@ -31,7 +31,6 @@ const handleChange = (routeName) => {
 
 export default function App() {
   const history = useHistory();
-
   useEffect(() => {
     return history.listen((location) => {
       handleChange(location.pathname);
@@ -55,6 +54,7 @@ export default function App() {
           <Route path="/audioChallenge" component={AudioChallenge} />
           <Route path="/sprint" component={Sprint} />
           <Route path="/ourCustomGame" component={OurCustomGame} />
+          <Route path="/englishTest" component={EnglishTest} />
           <Route path="/404" component={PageNotFound} />
           <Route path="*">
             <Redirect to="/404" />
