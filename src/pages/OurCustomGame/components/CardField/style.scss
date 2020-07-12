@@ -1,0 +1,16 @@
+.cardField-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  width: 960px;
+  justify-content: center;
+  align-items: center;
+
+  &-btn {
+    margin-left: 5px;
+  }
+
+  @media(max-width: 1020px) {
+    width: 100%;
+  }
+}

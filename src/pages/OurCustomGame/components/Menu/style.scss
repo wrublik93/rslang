@@ -1,0 +1,12 @@
+.menu-container {
+  display: flex;
+  justify-content: flex-end;
+
+  &-item {
+    margin: 5px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px black;
+  }
+}
