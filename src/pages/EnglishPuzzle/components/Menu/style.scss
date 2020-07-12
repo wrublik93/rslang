@@ -1,0 +1,13 @@
+.menu-container {
+    display: flex;
+    width: 20%;
+    justify-content: center;
+
+    @media(max-width: 767px) {
+      width: 30%;
+    }
+
+    @media(max-width: 479px) {
+      width: 50%;
+    }
+}

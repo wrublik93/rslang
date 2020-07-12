@@ -1,3 +1,13 @@
 .english-puzzle {
   display: flex;
+  background-color: rgba(219, 203, 189, .7);
+  width: 100%;
+  height: calc(100vh - 93px);
+  padding: 0 40px;
+  align-items: center;
+  justify-content: center;
+
+  @media(max-width: 479px){
+    padding: 0 10px;
+  }
 }

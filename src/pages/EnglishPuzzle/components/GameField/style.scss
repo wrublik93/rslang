@@ -1,0 +1,11 @@
+.gameField-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-btns {
+    display: flex;
+    margin-top: 20px;
+  }
+}

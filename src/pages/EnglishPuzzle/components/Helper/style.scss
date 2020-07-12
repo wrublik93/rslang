@@ -1,0 +1,50 @@
+.helper-container {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  @media(max-width: 767px) {
+    width: 70%;
+  }
+
+  @media(max-width: 479px) {
+    width: 50%;
+  }
+
+  &-helperData  {
+    color: rgb(4, 5, 83);
+    font-size: 18px;
+    text-align: center;
+    padding: 0 10px;
+    width: 80%;
+
+    @media (max-width: 479px) {
+      display: none;
+    }
+  }
+
+  &-tools {
+    display: flex;
+
+    .image-btn {
+      @media (max-width: 767px) {
+        display: none;
+      }
+    }
+
+    .translate-btn {
+      @media (max-width: 479px) {
+        display: none;
+      }
+    }
+
+    &-helperItem {
+      cursor: pointer;
+
+      &.on {
+        opacity: .5;
+      }
+    }
+  }
+}

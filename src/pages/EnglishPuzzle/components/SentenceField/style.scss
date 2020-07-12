@@ -1,0 +1,11 @@
+.sentenceField-container {
+  @media(max-width: 767px) {
+    display: none;
+  }
+
+  &-paintingData {
+    color: rgb(19, 42, 107);
+    font-style: italic;
+    font-weight: 600;
+  }
+}

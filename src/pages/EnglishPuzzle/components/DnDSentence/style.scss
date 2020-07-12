@@ -1,0 +1,93 @@
+$bgcolor: rgb(240, 237, 230);
+
+.dnDcontainer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $bgcolor;
+  width: 635px;
+  margin-top: 5px;
+  box-shadow:  -16px 0px 0px $bgcolor, 0px 0px 17px 2px;
+
+  @media(max-width: 767px) {
+    width: 420px;
+    box-shadow: 0px 0px 17px 2px;
+  }
+
+  @media(max-width: 479px) {
+    width: 280px;
+  }
+
+  &-dropContainer {
+    height: 50px;
+    width: 100%;
+
+    @media(max-width: 767px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      padding: 10px;
+      height: 120px;
+    }
+
+    @media(max-width: 479px) {
+      height: 180px;
+    }
+  }
+
+  &-dragContainer {
+    height: 50px;
+    width: 100%;
+
+    @media(max-width: 767px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      align-content: center;
+      background-color: rgb(161, 181, 208);
+      padding: 10px;
+      height: 120px;
+    }
+
+    @media(max-width: 479px) {
+      height: 180px;
+    }
+  }
+
+  &-box {
+    position: relative;
+    margin-left: -8px;
+    height: 0px;
+    display: inline-block;
+
+    @media(max-width: 767px) {
+      margin-left: 0;
+      height: auto;
+    }
+
+    &.green::before {
+      content: '\2714';
+      position: absolute;
+      color: rgba(27, 197, 27, 1);
+      top: 0px;
+      left: 3px;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px white, 1px 1px 2px black;
+    }
+
+    &.red::before {
+      content: '\2718';
+      position: absolute;
+      color: rgba(236, 63, 63, 1);
+      top: 0px;
+      left: 3px;
+      font-weight: bold;
+      text-shadow: 1px 1px 1px white, 1px 1px 2px black;
+    }
+  }
+}

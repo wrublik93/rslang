@@ -1,0 +1,11 @@
+.resultItem-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 8px 0;
+
+  &-text {
+    border-bottom: 2px solid rgb(217, 218, 215);
+  }
+}
