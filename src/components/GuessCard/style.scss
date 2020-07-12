@@ -1,0 +1,59 @@
+span.before,
+span.after {
+  padding: 0.3rem 0;
+}
+
+.crd {
+  min-height: 300px;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  &__button {
+    width: 100%;
+    min-width: 65px;
+  }
+
+  &__title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  &__image-block{
+    display: flex;
+    align-items: center;
+  }
+
+  &__image-association {
+    height: auto !important;
+  }
+
+  &__list > .list-group-item:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  &__input-block{
+    margin-top: 40px;
+  }
+
+  &__input-block > div {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sentence{
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  &__sentence-translate{
+    font-size: 0.8rem;
+  }
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
