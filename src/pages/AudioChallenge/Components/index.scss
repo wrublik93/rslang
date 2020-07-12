@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+.start-page {
+    position: fixed;
+    width: 100vw;
+    height: 85vh;
+    background-repeat: no-repeat;
+    background-image: url('../../../assets/AudioChallenge/image/background.png');
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.hide-start-page {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app-info {
+    text-align: center;
+}
+
+.appName {
+    font-size: 6vw;
+    color: whitesmoke;
+}
+
+.app-describe {
+    font-size: 2vw;
+    line-height: 1;
+    color: rgb(247, 226, 226);
+}
+
+.guide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%
+}
+
+.play-button {
+    margin-top: 10px;
+    width: 8vw;
+    height: 3.5vw;
+    margin-right: 1vw;
+    background-color: rgb(177, 115, 235);
+    border-radius: 3px;
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.play-button:hover {
+    background-color: rgb(180, 134, 224);
+    transition: .1s ease-in-out;
+}
+
+.play-button:active {
+    opacity: 0.5;
+}
+
+.button-translate {
+  margin: 10px;
+}
+
+.button-translate-word {
+  margin: 10px;
+  padding-left: inherit;
+}
+
+.image-words {
+  margin: 10px;
+  border-radius: 100px;
+  border: 2px solid #3f4752;
+  box-shadow: 0 0 20px #837bf3;
+  width: 160px;
+  height: 150px;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.correctAnswer {
+  background-color: #c9ffe3;
+}
+.wrongAnswer {
+  background-color: #ffc9c9;
+}
+
+.button-next {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+}
+
+.GameOver-text {
+  color: #0aa8c4;
+}
+
+.GameOver-text-header {
+  background-color: #d6feff;
+}
+
+.GameOver-text-resault {
+  background-color: #d6feff;
+}
+
+.audio-challenge {
+  display: flex;
+  text-align: center;
+}
+
+.Image-word {
+  height: 10vh;
+  pointer-events: none;
+}
+
+.App-header {
+  background-image: url("../../../assets/AudioChallenge/image/backGame.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 85vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.word-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.word-list li {
+  margin: 5%;
+}
