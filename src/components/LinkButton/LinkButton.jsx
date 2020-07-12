@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function LinkButton({ link, children }) {
   return (
     <Link to={link}>
-      <Button variant="warning">{children}</Button>
+      <Button variant="info">{children}</Button>
     </Link>
   );
 }
