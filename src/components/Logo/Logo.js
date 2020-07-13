@@ -7,13 +7,7 @@ import logo from "assets/logo.svg";
 
 const Logo = (props) => {
   const { className } = props;
-  return (
-    <img
-      className={classNames("logo-size_middle", className)}
-      src={logo}
-      alt="Logotype"
-    />
-  );
+  return <img className={classNames(className)} src={logo} alt="Logotype" />;
 };
 
 export default Logo;

@@ -17,11 +17,12 @@ import PageNotFound from "pages/PageNotFound";
 import Registration from "pages/Registration";
 import Savanna from "pages/Savanna";
 import SpeakIt from "pages/SpeakIt";
+import Vocabulary from "pages/Vocabulary";
+import Statistic from "pages/Statistic";
+
 import Sprint from "pages/Sprint";
 import EnglishTest from "pages/EnglishTest";
 import GamesPage from "pages/GamesPage";
-import Statistic from "pages/Statistic";
-import Vocabulary from "pages/Vocabulary";
 
 const handleChange = (routeName) => {
   if (routeName) {
@@ -29,7 +30,7 @@ const handleChange = (routeName) => {
   }
 };
 
-export default function App() {
+const App = () => {
   const history = useHistory();
   useEffect(() => {
     return history.listen((location) => {
@@ -65,4 +66,6 @@ export default function App() {
       <Footer />
     </>
   );
-}
+};
+
+export default App;

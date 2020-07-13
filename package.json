@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "prettier:format": "prettier --write \"**/*.+(js|jsx|css)\"",
     "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
+    "lint:fix": "eslint --fix",
     "fix": "run-s prettier:format lint:fix",
     "fix-staged": "lint-staged",
     "svgo": "svgo --pretty --indent=2 --disable=removeViewBox,mergePaths --enable=inlineStyles  --config '{ \"plugins\": [ { \"inlineStyles\": { \"onlyMatchedOnce\": false } }] }' $FILE"
