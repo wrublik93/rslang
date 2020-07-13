@@ -1,0 +1,118 @@
+@media (max-width: 1130px) {
+  .allWords{
+    margin: 0px;
+    height: 81%;
+    width: 948px;
+  }
+  .meaning-example__container {
+    width: 370px;
+  }
+}
+@media (max-width: 950px) {
+  .allWords {
+    width: 803px;
+  }
+  .meaning-example {
+    margin-left: 8px;
+}
+.text-Word {
+  font-size: 11px;
+}
+}
+@media (max-width: 800px) {
+  .learning-process {
+    font-size: 11px;
+  }
+  .button-exit,.button-learningWords,.button-difficultWords,.button-deletedWords{
+    width: 65px;
+    font-size: 9px;
+    padding: 5px 0;
+  }
+
+  .button-difficultWords {
+    margin: 0 2px;
+}
+.word-information {
+  font-size: 9px;
+  padding: 0 0px;
+}
+.allWords{
+  margin: 0px;
+  height: 81%;
+  width: 499px;
+}
+.index {
+  margin: auto 3px;
+}
+.imgWord {
+  width: 55px;
+  margin: 1px;
+
+}
+.text-Word {
+  font-size: 8px;
+}
+.meaning-example__container{
+  width: 150px;
+  display: block;
+}
+.translation-container{
+  width: 50px;
+  display: block;
+}
+.translation {
+  width: 50px;
+  margin-left: 0px;
+  margin-top: 3px;
+}
+.audioWord {
+  display: inline-block;
+  height: 12px;
+  margin: 0 AUTO;
+  height: 10px;
+}
+.button-container {
+  margin: auto 0px;
+  margin-right:3px;
+
+}
+.button-img {
+  width: 20px;
+    height: 20px;
+}
+.meaning-example {
+  margin-left: 4px;
+}
+.meaning-example__container .button-img,
+.translation-container .button-img {
+  margin-left: 30%;
+}
+}
+@media (max-width: 500px) {
+  .learning-process {
+    font-size: 8px;
+    padding-left: 2px;
+  }
+  .learning-process__1 {
+    margin-right: 15px;
+}
+.word-information {
+  font-size: 8px;
+}
+.allWords{
+  width: 315PX;
+}
+.imgWord {
+  width: 45px;
+}
+.text-Word {
+  font-size: 8px;
+}
+.meaning-example__container{
+  width: 90px;
+}
+
+
+
+
+}
