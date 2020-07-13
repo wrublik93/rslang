@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { getData } from "services/services";
+import { getDataTemp } from "services/services";
 import { Button } from "react-bootstrap";
 import { RandomInteger, RightAnswer } from "utils/utils";
 import { LinkMed } from "constants/constants";
@@ -40,7 +40,7 @@ const GameAudioChallenge = ({
   useEffect(() => {
     const getWords = async () => {
       setPage(0);
-      const fetchData = getData(page);
+      const fetchData = getDataTemp(page);
       const newWords = await fetchData();
       setWords(newWords);
       const current = newWords[newWords.length - 1];
