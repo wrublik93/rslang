@@ -2,33 +2,15 @@ import classNames from "classnames";
 import "components/GuessCard/style.scss";
 import Image from "components/Image/Image";
 import React, { useEffect, useRef } from "react";
-import {
-  Button,
-  Card,
-  Col,
-  Container,
-  Form,
-  ListGroup,
-  Row,
-} from "react-bootstrap";
-
-const createSentenceListItem = (text, translation) => {
-  const searchRegExp = /<[A-Za-z]+>(.*?)<\/[A-Za-z]+>/g;
-  const replaceWith = "[..]";
-  const resultText = (
-    <p className="crd__sentence">{text.replace(searchRegExp, replaceWith)}</p>
-  );
-
-  const resultTranslation = translation !== undefined && (
-    <p className="crd__sentence-translate">
-      {" "}
-      {translation.replace(searchRegExp, replaceWith)}{" "}
-    </p>
-  );
-  return [resultText, resultTranslation];
-};
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import createSentenceListItem from "./createSentence";
 
 const GuessCard = (props) => {
+  const textInput = useRef(null);
+  useEffect(() => {
+    textInput.current.focus();
+  }, []);
+
   const {
     title,
     word,
@@ -41,18 +23,19 @@ const GuessCard = (props) => {
     image,
   } = props;
 
-  const textInput = useRef(null);
-  useEffect(() => {
-    textInput.current.focus();
-  }, []);
-
   const cardClass = classNames("crd");
   const cardHeaderClass = classNames("crd__header");
   const cardTitleClass = classNames("crd__title", "no-wrap");
   const cardBodyClass = classNames("crd__body");
   const cardInputClass = classNames("crd__input", "no-wrap");
   const cardButtonClass = classNames("crd__button");
-  const cardListClass = classNames("crd__list");
+  const cardListClass = classNames(
+    "crd__list",
+    "list-group",
+    "list-group-flush"
+  );
+  const cardListItem = classNames("crd__list-item", "list-group-item");
+  const cardWordClass = classNames("crd__word");
   const cardInputBlockClass = classNames(
     "crd__input-block",
     "justify-content-center"
@@ -66,6 +49,34 @@ const GuessCard = (props) => {
     event.preventDefault();
   };
 
+  const listData = [
+    {
+      data: (
+        <h3 className={cardWordClass} key={1}>
+          {wordTranslate
+            ? wordTranslate.toString().toUpperCase()
+            : "Sorry, no translation of word"}
+        </h3>
+      ),
+      id: 1,
+    },
+  ];
+  if (textExample) {
+    const id = listData[listData.length - 1].id + 1;
+    listData.push({
+      data: createSentenceListItem(textExample, textExampleTranslate),
+      id,
+    });
+  }
+
+  if (textMeaning) {
+    const id = listData[listData.length - 1].id + 1;
+    listData.push({
+      data: createSentenceListItem(textMeaning, textMeaningTranslate),
+      id,
+    });
+  }
+
   return (
     <Container>
       <Row className="justify-content-center">
@@ -78,7 +89,7 @@ const GuessCard = (props) => {
               <Container>
                 <Row className="crd__image-block">
                   {image && (
-                    <Col xs={4}>
+                    <Col xs={12} md={6}>
                       <Image
                         src={url}
                         alt="picture association"
@@ -87,33 +98,19 @@ const GuessCard = (props) => {
                     </Col>
                   )}
                   <Col>
-                    <ListGroup
-                      as="ul"
-                      className={cardListClass}
-                      variant="flush"
-                    >
-                      <ListGroup.Item as="li" key="item-1">
-                        <h3>
-                          {wordTranslate
-                            ? wordTranslate.toString().toUpperCase()
-                            : "Sorry, no translation of word"}
-                        </h3>
-                      </ListGroup.Item>
-                      <ListGroup.Item as="li" key="item-2">
-                        {textExample &&
-                          createSentenceListItem(
-                            textExample,
-                            textExampleTranslate
-                          )}
-                      </ListGroup.Item>
-                      <ListGroup.Item as="li" key="item-3">
-                        {textMeaning &&
-                          createSentenceListItem(
-                            textMeaning,
-                            textMeaningTranslate
-                          )}
-                      </ListGroup.Item>
-                    </ListGroup>
+                    <ul className={cardListClass}>
+                      {listData &&
+                        listData.length > 0 &&
+                        listData.map((item) => {
+                          return (
+                            <ListItem
+                              className={cardListItem}
+                              key={item.id.toString()}
+                              data={item.data}
+                            />
+                          );
+                        })}
+                    </ul>
                   </Col>
                 </Row>
               </Container>
@@ -131,7 +128,7 @@ const GuessCard = (props) => {
                       ref={textInput}
                       size="lg"
                       type="text"
-                      maxlength="50"
+                      maxLength="50"
                     />
                   </Form.Group>
                   <Button
@@ -149,6 +146,11 @@ const GuessCard = (props) => {
       </Row>
     </Container>
   );
+};
+
+const ListItem = (props) => {
+  const { data, className } = props;
+  return <li className={className}>{data}</li>;
 };
 
 GuessCard.defaultProps = {

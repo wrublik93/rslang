@@ -1,6 +1,7 @@
 import React from "react";
 import "pages/Home/style.scss";
 import { Container, Row, Col, Card, CardDeck } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import games from "assets/images/home-page/games.jpeg";
 import dictionary from "assets/images/home-page/dictionary.jpg";
 import wordLearn from "assets/images/home-page/word-learn.jpg";
@@ -16,7 +17,7 @@ const Home = () => {
               <Card.Img variant="top" src={games} />
               <Card.Body>
                 <Card.Title>
-                  <Card.Link href="/games">Mini games</Card.Link>
+                  <Link to="/games">Mini games</Link>
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -24,7 +25,7 @@ const Home = () => {
               <Card.Img variant="top" src={dictionary} />
               <Card.Body>
                 <Card.Title>
-                  <Card.Link href="/vocabulary">Vocabulary</Card.Link>
+                  <Link to="/vocabulary">Vocabulary</Link>
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -32,7 +33,7 @@ const Home = () => {
               <Card.Img variant="top" src={wordLearn} />
               <Card.Body>
                 <Card.Title>
-                  <Card.Link href="#">Learn new words</Card.Link>
+                  <Link to="/guess">Learn new words</Link>
                 </Card.Title>
               </Card.Body>
             </Card>
@@ -40,7 +41,7 @@ const Home = () => {
               <Card.Img variant="top" src={statistics} />
               <Card.Body>
                 <Card.Title>
-                  <Card.Link href="/statistic">Statistics</Card.Link>
+                  <Link to="/statistic">Statistics</Link>
                 </Card.Title>
               </Card.Body>
             </Card>

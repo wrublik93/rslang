@@ -10,6 +10,16 @@ span.after {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    @media (max-width: 576px) {
+      padding: 10px;
+  }
+  }
+
+  &__word {
+    white-space: nowrap;
+    @media (max-width: 400px) {
+        font-size: 1.3rem;
+    }
   }
 
   &__button {
@@ -20,9 +30,12 @@ span.after {
   &__title {
     text-overflow: ellipsis;
     overflow: hidden;
+    @media (max-width: 400px) {
+      font-size: 1.5rem;
+  }
   }
 
-  &__image-block{
+  &__image-block {
     display: flex;
     align-items: center;
   }
@@ -34,8 +47,8 @@ span.after {
   &__list > .list-group-item:nth-of-type(even) {
     background-color: rgba(0, 0, 0, 0.05);
   }
-  &__input-block{
-    margin-top: 40px;
+  &__input-block {
+    margin-top: 5px;
   }
 
   &__input-block > div {
@@ -44,12 +57,12 @@ span.after {
     flex-direction: column;
   }
 
-  &__sentence{
+  &__sentence {
     font-size: 1rem;
     font-weight: bold;
   }
 
-  &__sentence-translate{
+  &__sentence-translate {
     font-size: 0.8rem;
   }
 }
