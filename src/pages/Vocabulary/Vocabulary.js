@@ -77,7 +77,7 @@ const Vocabulary = () => {
         </div>
       </div>
       {vocabularyWords === "learningWords" && (
-        <div className="allWords"> {allWords}</div>
+        <div className="allWords scrollbar"> {allWords}</div>
       )}
       {vocabularyWords === "difficultWords" && (
         <div className="difficultWords" />

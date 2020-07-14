@@ -24,6 +24,8 @@ import Sprint from "pages/Sprint";
 import EnglishTest from "pages/EnglishTest";
 import GamesPage from "pages/GamesPage";
 
+import "styles/styles.scss";
+
 const handleChange = (routeName) => {
   if (routeName) {
     document.title = routeNamesMap[routeName];

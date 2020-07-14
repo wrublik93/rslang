@@ -101,7 +101,7 @@ const Header = ({ user }) => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Navbar.Text>
+        <Navbar.Text className="header__login">
           Signed in as:{" "}
           <a href="#login" className="text-success">
             {user}

@@ -2,12 +2,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  &__nav{
+  &__nav {
     width: 100%;
   }
-  &__title{
+  &__title {
     font-size: 1.8rem;
     margin-bottom: 0;
+    @media (max-width: 576px) {
+      font-size: 1.3rem;
+    }
+    @media (max-width: 400px) {
+      font-size: 1rem;
+    }
+  }
+
+  &__login {
+    font-size: 1.2rem;
+    @media (max-width: 576px) {
+      font-size: 0.8rem;
+    }
+    @media (max-width: 400px) {
+      font-size: 0.6rem;
+    }
   }
 
   .nav-item {
@@ -33,5 +49,10 @@
     .dropdown-menu {
       position: absolute;
     }
+  }
+}
+.navbar-toggler {
+  @media (max-width: 400px) {
+    padding: 0.15rem 0.45rem;
   }
 }
