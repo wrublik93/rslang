@@ -1,0 +1,120 @@
+[
+  {
+    "id": "1",
+    "name": "Vladimir",
+    "surname": "Panteleev",
+    "position": "Team Lead",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/vpanteleev",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Ivan",
+    "surname": "Vrubleuski",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/wrublik93",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Alexey",
+    "surname": "Koren",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/Alexey-Koren",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Anastasia",
+    "surname": "Savich",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/savichanastasia",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Konstantsin",
+    "surname": "Yakimovich",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/kostyayakimovich",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Ulyana",
+    "surname": "Luna",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Evgeniya",
+    "surname": "Ivanova",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "Yuriy",
+    "surname": "Shilenkov",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "image": "assets/images/about-us-page/yuriy.jpeg",
+    "contacts": [
+      {
+        "link": "https://github.com/Yuriy17",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "Alesya",
+    "surname": "Zarembo",
+    "position": "Developer",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/alesyaz",
+        "icon": "github"
+      }
+    ]
+  }
+]

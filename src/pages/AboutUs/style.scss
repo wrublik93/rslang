@@ -1,3 +1,42 @@
-.about-us {
-  display: flex;
+.participants{
+  justify-content: space-evenly;
+
+  &__title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .name{
+      font-size: 1.5rem;
+    }
+    .surname{
+      font-size: 1rem;
+    }
+  }
+
+  &__card{
+    min-width: 210px;
+    max-width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    padding-top: 10px;
+    margin-top: 30px;
+  }
+
+  &__description-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h5{
+      font-size: 1.2rem;
+    }
+    p{
+      font-size: 1rem;
+    }
+  }
+
+  &__image{
+    width: 75%;
+  }
 }
