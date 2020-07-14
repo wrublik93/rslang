@@ -1,0 +1,146 @@
+.speak-it-words-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 0 auto;
+  grid-gap: 15px;
+  max-width: 1000px;
+}
+
+.speak-it-word-block {
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #a7a7a7;
+  height: auto;
+  font-size: 17px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  display: grid;
+  grid-template-areas: "play word word"
+                       "play transcription transcription";
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+}
+
+.speak-it-word-block:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.speak-it-word-block-word {
+  padding: 5px 0;
+  font-weight: 400;
+  grid-area: word;
+}
+
+.speak-it-word-block-transcription {
+  padding: 5px 0;
+  font-weight: 300;
+  grid-area: transcription;
+}
+
+.speak-it-word-block-play {
+  grid-area: play;
+  align-self: center;
+  justify-self: end;
+}
+
+.speak-it-image-container {
+  width: 370px;
+  height: 240px;
+  text-align: center;
+  margin: 20px auto 20px auto;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.speak-it-image {
+  width: 370px;
+  height: 240px;
+}
+
+.speak-it-word-translation {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  width: 370px;
+  margin: 0 auto 30px auto;
+  border-bottom: 2px solid #a7a7a7;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.speak-it-score-game {
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  width: 370px;
+  margin: 15px auto 0px auto;
+  border-bottom: 2px solid #a7a7a7;
+  font-family: 'Roboto', sans-serif;
+}
+
+.speak-it-button-new-words,
+.speak-it-button-start-game,
+.speak-it-button-results {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-control-buttons {
+  max-width: 1020px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 20px;
+}
+
+
+.speak-it-control-buttons-game {
+  max-width: 1020px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr 1fr;
+  grid-gap: 20px;
+}
+
+.speak-it-button-stop-game,
+.speak-it-button-restart-game,
+.speak-it-button-pause-game,
+.speak-it-button-results-game {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 20px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-disabled-element {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.speak-it-correct-answer {
+  background: green;
+  opacity: 1;
+  box-shadow: none;
+}
+
+.speak-it-loading-spinner {
+  text-align: center;
+}
+
+.speak-it-record-speech-start {
+  background: red;
+}

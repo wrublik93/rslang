@@ -1,3 +1,3 @@
-import SpeakIt from "pages/SpeakIt/SpeakIt";
+import SpeakIt from "./SpeakIt";
 
 export default SpeakIt;

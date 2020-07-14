@@ -57,3 +57,14 @@ export const getDataTemp = (page) => {
   };
   return wordsData;
 };
+
+export const getDataSpeakIt = (level, page) => {
+  const requestSprint = "https://afternoon-falls-25894.herokuapp.com/words?";
+  const wordsData = async () => {
+    const urlWords = `${requestSprint}page=${page}&group=${level}`;
+    const responseWords = await fetch(urlWords);
+    const words = await responseWords.json();
+    return words;
+  };
+  return wordsData;
+};
