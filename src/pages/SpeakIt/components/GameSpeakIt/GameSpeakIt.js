@@ -4,7 +4,7 @@ import PlayImage from "assets/speakIt/imgSpeakIt/play.png";
 import MainImage from "assets/speakIt/imgSpeakIt/main-image.png";
 
 import { getDataSpeakIt } from "services/services";
-import "./style.scss";
+import "pages/SpeakIt/components/GameSpeakIt/style.scss";
 
 const GameSpeakIt = ({ levelGame }) => {
   const databaseURL = "https://raw.githubusercontent.com/";

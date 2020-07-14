@@ -1,5 +1,5 @@
 import React from "react";
-import PopupSelect from "../PopupSelect";
+import PopupSelect from "pages/EnglishPuzzle/components/PopupSelect";
 import "pages/EnglishPuzzle/components/Menu/style.scss";
 
 function Menu({ level, setLevel, raund, setRaund, page, setPage }) {

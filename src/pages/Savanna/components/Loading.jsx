@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.scss";
+import "pages/Savanna/style.scss";
 import { Spinner } from "react-bootstrap";
 
 export default function Loading({ setSpinnerVisible }) {

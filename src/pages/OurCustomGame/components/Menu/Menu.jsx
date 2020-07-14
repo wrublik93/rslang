@@ -1,6 +1,10 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import { DIFFICULTY_ARRAY, LEVELS_ARRAY, PAGES_ARRAY } from "../../constants";
+import {
+  DIFFICULTY_ARRAY,
+  LEVELS_ARRAY,
+  PAGES_ARRAY,
+} from "pages/OurCustomGame/constants";
 import "pages/OurCustomGame/components/Menu/style.scss";
 
 function Menu({ setDifficulty, difficulty, level, setLevel, setPage, page }) {

@@ -1,5 +1,5 @@
 import React from "react";
-import { DATA_URL } from "../../constants";
+import { DATA_URL } from "pages/OurCustomGame/constants";
 import "pages/OurCustomGame/components/Card/style.scss";
 
 function Card({ picture, opened, hidden, onClick, index, text, id }) {

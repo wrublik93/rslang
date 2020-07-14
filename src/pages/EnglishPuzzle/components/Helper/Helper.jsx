@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "react-bootstrap";
-import Earth from "./Earth";
-import Image from "./Image";
-import Speak from "./Speak";
-import { AUDIO_URL } from "../../constants";
-import paintings from "../../../../assets/englishPuzzle/paintings";
+import Earth from "pages/EnglishPuzzle/components/Helper/Earth";
+import Image from "pages/EnglishPuzzle/components/Helper/Image";
+import Speak from "pages/EnglishPuzzle/components/Helper/Speak";
+import { AUDIO_URL } from "pages/EnglishPuzzle/constants";
+import paintings from "assets/englishPuzzle/paintings";
 import "pages/EnglishPuzzle/components/Helper/style.scss";
 
 function Helper({ word, setImg, level, raund, raundIsOver }) {

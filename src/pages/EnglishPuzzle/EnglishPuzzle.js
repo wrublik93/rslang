@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import StartScreen from "./components/StartScreen";
-import GameContainer from "./components/GameContainer";
+import StartScreen from "pages/EnglishPuzzle/components/StartScreen";
+import GameContainer from "pages/EnglishPuzzle/components/GameContainer";
 
 import "pages/EnglishPuzzle/style.scss";
 

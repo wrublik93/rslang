@@ -1,5 +1,5 @@
 import React from "react";
-import LinkButton from "../../../../components/LinkButton";
+import LinkButton from "components/LinkButton";
 import "pages/EnglishPuzzle/components/StartScreen/style.scss";
 
 function StartScreen({ link }) {

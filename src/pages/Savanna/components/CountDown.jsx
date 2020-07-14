@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import "../style.scss";
+import "pages/Savanna/style.scss";
 import countDownAudio from "assets/Savanna/gong.mp3";
 import imgKeyboard from "assets/Savanna/keyboard.svg";
-import getWords from "../getWords";
+import getWords from "pages/Savanna/getWords";
 
 export default function CountDown({
   setGameState,

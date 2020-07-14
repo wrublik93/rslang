@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "../../style.scss";
+import "pages/Savanna/style.scss";
 import correctAudio from "assets/Savanna/correct.mp3";
 import correct2Audio from "assets/Savanna/correct2.mp3";
 import incorrectAudio from "assets/Savanna/error.mp3";
-import WordTranslate from "./WordTranslate";
-import Word from "./Word";
+import WordTranslate from "pages/Savanna/components/game/WordTranslate";
+import Word from "pages/Savanna/components/game/Word";
 
 export default function Game({
   setGameState,

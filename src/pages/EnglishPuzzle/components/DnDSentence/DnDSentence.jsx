@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useCallback, useEffect } from "react";
-import Word from "../Word";
-import shuffle from "../../shuffle";
+import Word from "pages/EnglishPuzzle/components/Word";
+import shuffle from "pages/EnglishPuzzle/shuffle";
 import "pages/EnglishPuzzle/components/DnDSentence/style.scss";
 
 function DnDSentence({

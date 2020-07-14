@@ -1,1 +1,1 @@
-export { default } from "./Results";
+export { default } from "pages/OurCustomGame/components/Results/Results";

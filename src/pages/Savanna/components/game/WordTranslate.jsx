@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../style.scss";
+import "pages/Savanna/style.scss";
 
 export default function WordTranslate({
   word,

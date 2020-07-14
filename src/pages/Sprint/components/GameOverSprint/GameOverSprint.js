@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Button, Card, ListGroup } from "react-bootstrap";
-import "./style.scss";
+import "pages/Sprint/components/GameOverSprint/style.scss";
 
 const GameOverSprint = ({ rightAnswers, wrongAnswers, resultScore }) => {
   const [isArrayWords, setArrayWords] = useState(0);

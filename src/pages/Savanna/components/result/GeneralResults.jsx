@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style.scss";
+import "pages/Savanna/style.scss";
 
 export default function GeneralResults({
   setDetailedResultsShown,

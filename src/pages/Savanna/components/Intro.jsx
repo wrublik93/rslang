@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.scss";
+import "pages/Savanna/style.scss";
 import { Button } from "react-bootstrap";
 
 export default function Intro({ setGameState, setLevelWord }) {

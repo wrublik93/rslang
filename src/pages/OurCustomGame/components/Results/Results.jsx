@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import ResultItem from "../ResultItem";
-import { DATA_URL } from "../../constants";
+import ResultItem from "pages/OurCustomGame/components/ResultItem";
+import { DATA_URL } from "pages/OurCustomGame/constants";
 import "pages/OurCustomGame/components/Results/style.scss";
 
 function Results({ showResults, setShowResults, correct, incorrect }) {

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from "react";
-import timeConverter from "./timerConverter";
+import timeConverter from "pages/OurCustomGame/components/Timer/timerConverter";
 import "pages/OurCustomGame/components/Timer/style.scss";
 
 function Timer({ gameIsOver, words }) {

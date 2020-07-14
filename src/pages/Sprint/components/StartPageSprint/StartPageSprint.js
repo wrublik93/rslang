@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Button, Card, Form } from "react-bootstrap";
-import "./style.scss";
+import "pages/Sprint/components/StartPageSprint/style.scss";
 
 const StartPageSprint = ({ setStartGame, setLevel }) => {
   const handleClickStart = useCallback(() => {

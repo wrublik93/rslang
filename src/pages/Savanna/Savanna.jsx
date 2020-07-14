@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import "./style.scss";
-import Intro from "./components/Intro";
-import HeaderSavanna from "./components/HeaderSavanna";
-import Game from "./components/game/Game";
-import Results from "./components/result/Results";
-import WindowModal from "./components/WindowModal";
-import CountDown from "./components/CountDown";
-import Loading from "./components/Loading";
+import "pages/Savanna/style.scss";
+import Intro from "pages/Savanna/components/Intro";
+import HeaderSavanna from "pages/Savanna/components/HeaderSavanna";
+import Game from "pages/Savanna/components/game/Game";
+import Results from "pages/Savanna/components/result/Results";
+import WindowModal from "pages/Savanna/components/WindowModal";
+import CountDown from "pages/Savanna/components/CountDown";
+import Loading from "pages/Savanna/components/Loading";
 
 const Savanna = () => {
   const [gameState, setGameState] = useState("introSavanna");

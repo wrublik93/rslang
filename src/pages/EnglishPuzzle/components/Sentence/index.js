@@ -1,1 +1,1 @@
-export { default } from "./Sentence";
+export { default } from "pages/EnglishPuzzle/components/Sentence/Sentence";

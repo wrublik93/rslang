@@ -1,1 +1,1 @@
-export { default } from "./Card";
+export { default } from "pages/OurCustomGame/components/Card/Card";

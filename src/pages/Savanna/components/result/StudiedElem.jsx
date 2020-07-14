@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style.scss";
+import "pages/Savanna/style.scss";
 import imgSound from "assets/Savanna/sound.svg";
 
 const DATA_URL =

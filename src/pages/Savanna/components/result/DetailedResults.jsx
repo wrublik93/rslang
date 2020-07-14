@@ -1,6 +1,6 @@
 import React from "react";
-import "../../style.scss";
-import StudiedElem from "./StudiedElem";
+import "pages/Savanna/style.scss";
+import StudiedElem from "pages/Savanna/components/result/StudiedElem";
 
 export default function GeneralResults({ correctAnswer, wrongAnswer }) {
   const showCorrectAnswer = correctAnswer.map((el) => {

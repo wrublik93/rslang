@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "react-bootstrap";
 import winImage from "assets/ourCustomGame/win.png";
-import Timer from "../Timer";
-import CardField from "../CardField";
-import Results from "../Results";
+import Timer from "pages/OurCustomGame/components/Timer";
+import CardField from "pages/OurCustomGame/components/CardField";
+import Results from "pages/OurCustomGame/components/Results";
 import "pages/OurCustomGame/components/MainContainer/style.scss";
 
 function MainContainer({ words, changeLevel }) {

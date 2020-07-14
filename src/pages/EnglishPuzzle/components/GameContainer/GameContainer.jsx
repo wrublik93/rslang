@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useMemo, useCallback } from "react";
-import GameField from "../GameField";
-import SentenceField from "../SentenceField";
-import Menu from "../Menu";
-import Helper from "../Helper";
-import getWords from "../../getWords";
-import { RAUNDS, SENTENCES } from "../../constants";
+import GameField from "pages/EnglishPuzzle/components/GameField";
+import SentenceField from "pages/EnglishPuzzle/components/SentenceField";
+import Menu from "pages/EnglishPuzzle/components/Menu";
+import Helper from "pages/EnglishPuzzle/components/Helper";
+import getWords from "pages/EnglishPuzzle/getWords";
+import { RAUNDS, SENTENCES } from "pages/EnglishPuzzle/constants";
 import "pages/EnglishPuzzle/components/GameContainer/style.scss";
 
 function GameContainer() {

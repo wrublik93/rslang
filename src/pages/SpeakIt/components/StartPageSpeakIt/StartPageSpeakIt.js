@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Button, Card, ButtonGroup, ButtonToolbar } from "react-bootstrap";
-import "./style.scss";
+import "pages/SpeakIt/components/StartPageSpeakIt/style.scss";
 
 const StartPageSpeakIt = ({ setStartGame, setLevelGame, levelGame }) => {
   const levelButtons = [1, 2, 3, 4, 5, 6];

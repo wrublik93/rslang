@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import Word from "../Word";
+import Word from "pages/EnglishPuzzle/components/Word";
 import "pages/EnglishPuzzle/components/Sentence/style.scss";
 
 function Sentence({ data, imgWidth, imgHeight, groupsRow, img, i, opacity }) {

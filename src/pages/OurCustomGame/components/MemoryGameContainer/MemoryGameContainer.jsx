@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
-import getWords from "../../getWords";
-import Menu from "../Menu";
-import MainContainer from "../MainContainer";
+import getWords from "pages/OurCustomGame/getWords";
+import Menu from "pages/OurCustomGame/components/Menu";
+import MainContainer from "pages/OurCustomGame/components/MainContainer";
 import "pages/OurCustomGame/components/MemoryGameContainer/style.scss";
 
 function MemoryGameContainer() {

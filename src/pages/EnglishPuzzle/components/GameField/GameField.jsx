@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "react-bootstrap";
-import Results from "../Results";
-import BtnsGroup from "../BtnsGroup";
-import DnDSentence from "../DnDSentence";
+import Results from "pages/EnglishPuzzle/components/Results";
+import BtnsGroup from "pages/EnglishPuzzle/components/BtnsGroup";
+import DnDSentence from "pages/EnglishPuzzle/components/DnDSentence";
 import "pages/EnglishPuzzle/components/GameField/style.scss";
 
 function GameField({

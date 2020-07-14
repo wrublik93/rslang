@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import GameSpeakIt from "./components/GameSpeakIt";
-import StartPageSpeakIt from "./components/StartPageSpeakIt";
-import "./style.scss";
+import GameSpeakIt from "pages/SpeakIt/components/GameSpeakIt";
+import StartPageSpeakIt from "pages/SpeakIt/components/StartPageSpeakIt";
+import "pages/SpeakIt/style.scss";
 
 const SpeakIt = () => {
   const [startGame, setStartGame] = useState(false);

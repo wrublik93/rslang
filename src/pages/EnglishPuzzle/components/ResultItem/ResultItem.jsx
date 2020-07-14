@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import Speak from "../Helper/Speak";
+import Speak from "pages/EnglishPuzzle/components/Helper/Speak";
 import "pages/EnglishPuzzle/components/ResultItem/style.scss";
 
 function ResultItem({ text, audio, speakItem }) {

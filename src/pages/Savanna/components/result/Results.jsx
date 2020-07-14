@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "../../style.scss";
+import "pages/Savanna/style.scss";
 import { Button } from "react-bootstrap";
 import endAudio from "assets/Savanna/end.mp3";
 import { Link } from "react-router-dom";
-import GeneralResults from "./GeneralResults";
-import DetailedResults from "./DetailedResults";
+import GeneralResults from "pages/Savanna/components/result/GeneralResults";
+import DetailedResults from "pages/Savanna/components/result/DetailedResults";
 
 export default function Results({
   setGameState,

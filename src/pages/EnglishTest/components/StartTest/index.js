@@ -1,3 +1,3 @@
-import StartTest from "./StartTest";
+import StartTest from "pages/EnglishTest/components/StartTest/StartTest";
 
 export default StartTest;

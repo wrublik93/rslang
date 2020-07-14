@@ -1,1 +1,1 @@
-export { default } from "./CardField";
+export { default } from "pages/OurCustomGame/components/CardField/CardField";

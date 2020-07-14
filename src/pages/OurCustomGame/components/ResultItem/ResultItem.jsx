@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "react-bootstrap";
-import Speak from "./Speak";
+import Speak from "pages/OurCustomGame/components/ResultItem/Speak";
 import "pages/OurCustomGame/components/ResultItem/style.scss";
 
 function ResultItem({ text, audio, speakItem }) {

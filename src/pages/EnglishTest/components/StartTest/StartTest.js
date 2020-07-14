@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import { Button, Card } from "react-bootstrap";
-import "./style.scss";
+import "pages/EnglishTest/components/StartTest/style.scss";
 
 const StartTest = ({ setStartTest }) => {
   const handleClickStart = useCallback(() => {

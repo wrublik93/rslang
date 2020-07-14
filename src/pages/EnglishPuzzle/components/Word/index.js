@@ -1,1 +1,1 @@
-export { default } from "./Word";
+export { default } from "pages/EnglishPuzzle/components/Word/Word";

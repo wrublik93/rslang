@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Card, Button, Spinner } from "react-bootstrap";
 import { getData } from "services/services";
-import staticQuestions from "./staticQuestions";
-import "./style.scss";
+import staticQuestions from "pages/EnglishTest/components/Test/staticQuestions";
+import "pages/EnglishTest/components/Test/style.scss";
 
 let countAnswerMin = 0;
 let countAnswerMax = 3;

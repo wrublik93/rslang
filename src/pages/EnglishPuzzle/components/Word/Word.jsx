@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { SCREEN_POINT } from "../../constants";
+import { SCREEN_POINT } from "pages/EnglishPuzzle/constants";
 import "pages/EnglishPuzzle/components/Word/style.scss";
 
 function Word({

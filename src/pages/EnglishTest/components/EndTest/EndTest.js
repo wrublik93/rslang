@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Button, Card, ListGroup } from "react-bootstrap";
-import "./style.scss";
+import "pages/EnglishTest/components/EndTest/style.scss";
 
 const EndTest = ({ rightAnswer, wrongAnswer, resultTest, setLevel }) => {
   const history = useHistory();

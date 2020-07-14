@@ -1,6 +1,6 @@
 import React from "react";
-import "../style.scss";
-import StarsContainer from "./game/StarsContainer";
+import "pages/Savanna/style.scss";
+import StarsContainer from "pages/Savanna/components/game/StarsContainer";
 
 export default function HeaderSavanna({
   setModalWindowVisible,

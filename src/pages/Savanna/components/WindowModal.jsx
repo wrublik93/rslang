@@ -1,5 +1,5 @@
 import React from "react";
-import "../style.scss";
+import "pages/Savanna/style.scss";
 import { Modal, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 

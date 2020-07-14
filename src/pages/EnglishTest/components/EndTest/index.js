@@ -1,3 +1,3 @@
-import EndTest from "./EndTest";
+import EndTest from "pages/EnglishTest/components/EndTest/EndTest";
 
 export default EndTest;

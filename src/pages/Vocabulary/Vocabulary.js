@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "pages/Vocabulary/style.scss";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Word from "./components/Word";
-import * as wordsSnapshot from "./wordsSnapshot.json";
+import Word from "pages/Vocabulary/components/Word";
+import * as wordsSnapshot from "pages/Vocabulary/wordsSnapshot.json";
 
 const Vocabulary = () => {
   const [vocabularyWords, setVocabularyWords] = useState("learningWords");

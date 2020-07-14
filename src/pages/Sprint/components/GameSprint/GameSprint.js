@@ -6,7 +6,7 @@ import onSound from "assets/sprint/imgSprint/onSound.svg";
 import offSound from "assets/sprint/imgSprint/offSound.svg";
 import { getData } from "services/services";
 import { ProgressBar, Card, Image, Button, Spinner } from "react-bootstrap";
-import "./style.scss";
+import "pages/Sprint/components/GameSprint//style.scss";
 
 const audioCorrect = new Audio(Correct);
 const audioError = new Audio(ErrorSound);

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import GameSprint from "./components/GameSprint";
-import StartPageSprint from "./components/StartPageSprint";
-import GameOverSprint from "./components/GameOverSprint";
-import "./style.scss";
+import GameSprint from "pages/Sprint/components/GameSprint";
+import StartPageSprint from "pages/Sprint/components/StartPageSprint";
+import GameOverSprint from "pages/Sprint/components/GameOverSprint";
+import "pages/Sprint/style.scss";
 
 const Sprint = () => {
   const [startGame, setStartGame] = useState(false);

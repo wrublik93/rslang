@@ -1,6 +1,6 @@
 import React from "react";
-import { SENTENCES } from "../../constants";
-import Sentence from "../Sentence";
+import { SENTENCES } from "pages/EnglishPuzzle/constants";
+import Sentence from "pages/EnglishPuzzle/components/Sentence";
 import "pages/EnglishPuzzle/components/SentenceField/style.scss";
 
 function SentenceField({

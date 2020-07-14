@@ -1,3 +1,3 @@
-import Sprint from "./Sprint";
+import Sprint from "pages/Sprint/Sprint";
 
 export default Sprint;

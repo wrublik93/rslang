@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import ResultItem from "../ResultItem";
-import { AUDIO_URL } from "../../constants";
+import ResultItem from "pages/EnglishPuzzle/components/ResultItem";
+import { AUDIO_URL } from "pages/EnglishPuzzle/constants";
 import "pages/EnglishPuzzle/components/Results/style.scss";
 
 function Results({

@@ -3,7 +3,7 @@ import "components/GuessCard/style.scss";
 import Image from "components/Image/Image";
 import React, { useEffect, useRef } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
-import createSentenceListItem from "./createSentence";
+import createSentenceListItem from "components/GuessCard/createSentence";
 
 const GuessCard = (props) => {
   const textInput = useRef(null);

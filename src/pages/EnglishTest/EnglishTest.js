@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Test from "./components/Test";
-import StartTest from "./components/StartTest";
-import EndTest from "./components/EndTest";
-import "./style.scss";
+import Test from "pages/EnglishTest/components/Test";
+import StartTest from "pages/EnglishTest/components/StartTest";
+import EndTest from "pages/EnglishTest/components/EndTest";
+import "pages/EnglishTest/style.scss";
 
 const EnglishTest = () => {
   const [rightAnswer, setRightAnswer] = useState([]);

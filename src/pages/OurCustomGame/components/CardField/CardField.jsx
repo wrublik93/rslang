@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
-import Card from "../Card";
-import shuffle from "../../shuffle";
+import Card from "pages/OurCustomGame/components/Card";
+import shuffle from "pages/OurCustomGame/shuffle";
 import "pages/OurCustomGame/components/CardField/style.scss";
 
 function CardField({ words, setGameIsOver, addCorrect, addIncorrect }) {

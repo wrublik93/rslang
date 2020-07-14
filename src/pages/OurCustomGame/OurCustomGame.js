@@ -1,7 +1,8 @@
 import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
-import StartScreen from "./components/StartScreen";
-import MemoryGameContainer from "./components/MemoryGameContainer";
+import StartScreen from "pages/OurCustomGame/components/StartScreen";
+// eslint-disable-next-line max-len
+import MemoryGameContainer from "pages/OurCustomGame/components/MemoryGameContainer";
 import "pages/OurCustomGame/style.scss";
 
 const OurCustomGame = () => {

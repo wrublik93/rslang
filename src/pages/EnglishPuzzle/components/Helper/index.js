@@ -1,1 +1,1 @@
-export { default } from "./Helper";
+export { default } from "pages/EnglishPuzzle/components/Helper/Helper";
