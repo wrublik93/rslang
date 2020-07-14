@@ -1,0 +1,48 @@
+$mainColor: rgb(15, 76, 129);
+
+.startScreen {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 600px;
+  box-shadow: 1px 1px 2px $mainColor;
+  margin: 0 auto;
+  background-color: white;
+
+  @media (max-width: 767px) {
+    width: auto;
+  }
+
+  .btn-outline-primary {
+    color: $mainColor;
+    border-color: $mainColor;
+    margin: 20px 0;
+
+    &:hover {
+      background-color: $mainColor;
+      color: white;
+    }
+  }
+
+  &-title {
+    text-transform: uppercase;
+    position: relative;
+    color: rgb(250, 248, 233);
+    font-size: 35px;
+    font-weight: bold;
+    text-shadow: 4px 2px 2px black;
+    background: $mainColor;
+    width: 100%;
+    text-align: center;
+    padding: 5px 20px;
+    margin-bottom: 20px;
+
+    .startScreen-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

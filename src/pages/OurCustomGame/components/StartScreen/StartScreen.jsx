@@ -1,11 +1,11 @@
 import React from "react";
-import LinkButton from "components/LinkButton";
+
+import CommonStartScreen from "components/CommonStartScreen";
 import "pages/OurCustomGame/components/StartScreen/style.scss";
 
-function StartScreen({ link }) {
+function StartScreen({ onStartClick }) {
   return (
-    <div className="startScreen-container">
-      <h2 className="startScreen-container-title">Memory Game</h2>
+    <CommonStartScreen title="Memory Game" onStartClick={onStartClick}>
       <div className="startScreen-container-discription">
         <h4>Rules</h4>
         <ol>
@@ -19,8 +19,7 @@ function StartScreen({ link }) {
           <li>The game is over when all the cards have been matched.</li>
         </ol>
       </div>
-      <LinkButton link={link}>Start</LinkButton>
-    </div>
+    </CommonStartScreen>
   );
 }
 

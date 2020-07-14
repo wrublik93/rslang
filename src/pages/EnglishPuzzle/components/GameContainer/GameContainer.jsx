@@ -76,7 +76,7 @@ function GameContainer() {
   return isGameOver ? (
     <h2>Game over</h2>
   ) : (
-    <div className="gameContainer">
+    <div className="puzzle-gameContainer">
       <div className="gameContainer-toolsContainer">
         <Menu
           level={level}

@@ -1,17 +1,16 @@
 import React from "react";
-import LinkButton from "components/LinkButton";
+
+import CommonStartScreen from "components/CommonStartScreen";
 import "pages/EnglishPuzzle/components/StartScreen/style.scss";
 
-function StartScreen({ link }) {
+function StartScreen({ onStartClick }) {
   return (
-    <div className="startScreen-container">
-      <h2 className="startScreen-container-title">English puzzle</h2>
-      <div className="startScreen-container-discription">
+    <CommonStartScreen title="English puzzle" onStartClick={onStartClick}>
+      <div className="startScreen-discription">
         <p>Click on words.</p>
         <p>Words can be drag and drop. Select tooltips in the menu.</p>
       </div>
-      <LinkButton link={link}>Start</LinkButton>
-    </div>
+    </CommonStartScreen>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useCallback } from "react";
 import "pages/AudioChallenge/Components/index.scss";
-import { Button } from "react-bootstrap";
+import CommonStartScreen from "components/CommonStartScreen";
 
 export default function StartGameAudio({ setstartGamePages }) {
   const handleClickStart = useCallback(() => {
@@ -8,16 +8,10 @@ export default function StartGameAudio({ setstartGamePages }) {
   }, [setstartGamePages]);
 
   return (
-    <div className="start-page">
-      <div className="guide">
-        <div className="appName"> Audio Challenge</div>
-        <div className="app-describe">
-          Training improves listening comprehension.
-        </div>
-        <Button className="play-button" onClick={handleClickStart}>
-          Start
-        </Button>
+    <CommonStartScreen onStartClick={handleClickStart} title="Audio Challenge">
+      <div className="app-describe">
+        Training improves listening comprehension.
       </div>
-    </div>
+    </CommonStartScreen>
   );
 }

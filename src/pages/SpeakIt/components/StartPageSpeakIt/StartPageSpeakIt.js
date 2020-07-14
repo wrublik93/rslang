@@ -1,6 +1,8 @@
 import React, { useCallback } from "react";
 import { Button, Card, ButtonGroup, ButtonToolbar } from "react-bootstrap";
+
 import "pages/SpeakIt/components/StartPageSpeakIt/style.scss";
+import CommonStartScreen from "components/CommonStartScreen";
 
 const StartPageSpeakIt = ({ setStartGame, setLevelGame, levelGame }) => {
   const levelButtons = [1, 2, 3, 4, 5, 6];
@@ -17,8 +19,7 @@ const StartPageSpeakIt = ({ setStartGame, setLevelGame, levelGame }) => {
   );
 
   return (
-    <Card className="text-center">
-      <Card.Header>SpeakIt Game</Card.Header>
+    <CommonStartScreen title="Speak it" onStartClick={handleClickStart}>
       <Card.Body>
         <Card.Title>Click on the words to hear them sound</Card.Title>
         <Card.Text>
@@ -34,15 +35,8 @@ const StartPageSpeakIt = ({ setStartGame, setLevelGame, levelGame }) => {
             ))}
           </ButtonGroup>
         </ButtonToolbar>
-        <Button
-          variant="outline-primary"
-          className="start-button"
-          onClick={handleClickStart}
-        >
-          START GAME
-        </Button>
       </Card.Body>
-    </Card>
+    </CommonStartScreen>
   );
 };
 export default StartPageSpeakIt;

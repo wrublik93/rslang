@@ -1,6 +1,8 @@
 .our-custom-game {
   display: flex;
-  width: 100%;
   align-items: center;
   justify-content: center;
+  height: calc(100vh - 118px);
+  width: 100%;
+  background-color: #F0EDE6;
 }

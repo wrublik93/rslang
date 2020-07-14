@@ -1,6 +1,9 @@
 import React, { useCallback } from "react";
-import { Button, Card, Form } from "react-bootstrap";
+import { Card, Form } from "react-bootstrap";
+
 import "pages/Sprint/components/StartPageSprint/style.scss";
+
+import CommonStartScreen from "components/CommonStartScreen";
 
 const StartPageSprint = ({ setStartGame, setLevel }) => {
   const handleClickStart = useCallback(() => {
@@ -13,8 +16,7 @@ const StartPageSprint = ({ setStartGame, setLevel }) => {
   };
 
   return (
-    <Card className="text-center">
-      <Card.Header className="header-card-sprint">Sprint Game</Card.Header>
+    <CommonStartScreen title="Sprint" onStartClick={handleClickStart}>
       <Card.Body>
         <Card.Title>Learn new words and repeat it</Card.Title>
         <Card.Text>Choose the correct word</Card.Text>
@@ -32,15 +34,8 @@ const StartPageSprint = ({ setStartGame, setLevel }) => {
             <option>6</option>
           </Form.Control>
         </Form.Group>
-        <Button
-          variant="outline-primary"
-          className="start-button"
-          onClick={handleClickStart}
-        >
-          START GAME
-        </Button>
       </Card.Body>
-    </Card>
+    </CommonStartScreen>
   );
 };
 export default StartPageSprint;

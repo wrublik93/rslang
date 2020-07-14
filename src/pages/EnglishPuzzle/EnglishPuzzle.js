@@ -1,20 +1,23 @@
-import React from "react";
-import { Switch, Route, useRouteMatch } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+
 import StartScreen from "pages/EnglishPuzzle/components/StartScreen";
 import GameContainer from "pages/EnglishPuzzle/components/GameContainer";
-
 import "pages/EnglishPuzzle/style.scss";
 
 const EnglishPuzzle = () => {
-  const match = useRouteMatch().url;
+  const [start, setStart] = useState(false);
+
+  useEffect(() => {
+    setStart(false);
+  }, []);
+
   return (
     <div className="english-puzzle">
-      <Switch>
-        <Route exact path={`${match}/`}>
-          <StartScreen link={`${match}/game`} />
-        </Route>
-        <Route path={`${match}/game`} component={GameContainer} />
-      </Switch>
+      {start ? (
+        <GameContainer />
+      ) : (
+        <StartScreen onStartClick={() => setStart(true)} />
+      )}
     </div>
   );
 };

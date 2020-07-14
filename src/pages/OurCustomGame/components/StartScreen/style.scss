@@ -7,34 +7,24 @@ $mainColor: rgb(15, 76, 129);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('../../../../assets/ourCustomGame/brain.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: rgb(207, 243, 250);
-
-  &-title {
-    text-transform: uppercase;
-    font-size: 35px;
-    font-weight: bold;
-    text-shadow: 4px 2px 2px black;
-    background: $mainColor;
-    width: 100%;
-    text-align: center;
-    padding: 5px 20px;
-  }
+  background-color: rgb(250, 247, 207);
 
   &-discription {
+    text-align: center;
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 22px;
-    background-color: rgba(15, 76, 129, .7);
-    color: rgb(215, 240, 247);
+    color: $mainColor;
     font-size: 22px;
-    text-shadow: 2px 1px black;
-  }
+    text-shadow: 1px 1px black;
+    width: 100%;
 
-  h4 {
-    text-align: center;
+    ol {
+      list-style: none;
+    }
+
+    h4 {
+      text-align: center;
+    }
   }
 }
