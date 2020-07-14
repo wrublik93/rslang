@@ -16,8 +16,8 @@ import alesya from "assets/images/about-us-page/alesya.jpeg";
 const AboutUs = () => {
   const images = [
     vladimir,
-    ivan,
     alexey,
+    ivan,
     anastasia,
     konstantsin,
     ulyana,

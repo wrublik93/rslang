@@ -3,7 +3,7 @@
     "id": "1",
     "name": "Vladimir",
     "surname": "Panteleev",
-    "position": "Team Lead",
+    "position": "Project Manager",
     "contribution": "vacant seat for your work",
     "contacts": [
       {
@@ -14,6 +14,19 @@
   },
   {
     "id": "2",
+    "name": "Alexey",
+    "surname": "Koren",
+    "position": "Team Lead",
+    "contribution": "vacant seat for your work",
+    "contacts": [
+      {
+        "link": "https://github.com/Alexey-Koren",
+        "icon": "github"
+      }
+    ]
+  },
+  {
+    "id": "3",
     "name": "Ivan",
     "surname": "Vrubleuski",
     "position": "Developer",
@@ -21,19 +34,6 @@
     "contacts": [
       {
         "link": "https://github.com/wrublik93",
-        "icon": "github"
-      }
-    ]
-  },
-  {
-    "id": "3",
-    "name": "Alexey",
-    "surname": "Koren",
-    "position": "Developer",
-    "contribution": "vacant seat for your work",
-    "contacts": [
-      {
-        "link": "https://github.com/Alexey-Koren",
         "icon": "github"
       }
     ]
