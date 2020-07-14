@@ -1,17 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-import "components/Header/style.scss";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { useCookies } from "react-cookie";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+import classNames from "classnames";
 
 import { useGlobalState } from "store/store";
 
-import classNames from "classnames";
-
 import Logo from "components/Logo";
 
+import "components/Header/style.scss";
+
 const Header = () => {
-  const [auth] = useGlobalState("auth");
+  const [user, setUser] = useGlobalState("user");
+
+  // eslint-disable-next-line no-unused-vars
+  const [userCookie, setUserCookie, removeUserCookie] = useCookies("user");
+
+  const handleLogout = () => {
+    removeUserCookie("user");
+    setUser({});
+  };
 
   return (
     <header className="header">
@@ -106,10 +114,13 @@ const Header = () => {
           </Nav>
         </Navbar.Collapse>
         <Navbar.Text>
-          {auth.email && (
+          {user.email && (
             <>
               <div>Signed in as:</div>
-              <div>{auth.email}</div>
+              <div>{user.email}</div>
+              <Button variant="danger" onClick={handleLogout}>
+                Logout
+              </Button>
             </>
           )}
         </Navbar.Text>

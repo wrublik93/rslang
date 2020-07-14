@@ -1,14 +1,14 @@
 import { createGlobalState } from "react-hooks-global-state";
 
 const initialState = {
-  auth: {
+  user: {
     authStatus: false,
     email: "",
   },
+  userCookie: {},
   words: [],
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export const { useGlobalState, setGlobalState } = createGlobalState(
   initialState
 );

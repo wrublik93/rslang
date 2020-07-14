@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import { useGlobalState } from "store/store";
+import { settingCookie } from "store/actions";
+import { useCookies } from "react-cookie";
 
 import { routeNamesMap } from "constants/constants";
 
@@ -35,13 +37,22 @@ const handleChange = (routeName) => {
 
 const App = () => {
   const history = useHistory();
+
+  const [userStore, setUserStore] = useGlobalState("user");
+  const [userCookie] = useCookies("user");
+
   useEffect(() => {
+    if (userCookie.user) {
+      const { user } = userCookie;
+
+      settingCookie(user);
+      setUserStore(user);
+    }
+
     return history.listen((location) => {
       handleChange(location.pathname);
     });
-  }, [history]);
-
-  const [auth] = useGlobalState("auth");
+  }, [history, userCookie, setUserStore]);
 
   return (
     <>
@@ -49,59 +60,59 @@ const App = () => {
       <Main>
         <Switch>
           <Route exact path="/" component={Registration}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/home" component={Home}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/games" component={GamesPage}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/aboutUs" component={AboutUs}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/vocabulary" component={Vocabulary}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/statistic" component={Statistic}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/speakIt" component={SpeakIt}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/englishPuzzle" component={EnglishPuzzle}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/savanna" component={Savanna}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/audioChallenge" component={AudioChallenge}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/sprint" component={Sprint}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/ourCustomGame" component={OurCustomGame}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/englishTest" component={EnglishTest}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/guess" component={GuessCard}>
-            {!auth.authStatus && <Registration />}
+            {!userStore.authStatus && <Registration />}
           </Route>
 
           <Route path="/404" component={PageNotFound} />

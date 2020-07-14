@@ -4,7 +4,8 @@ import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 
 import { createUser, loginUser } from "services/services";
-import { settingAuth } from "store/actions";
+import { settingUser, settingCookie } from "store/actions";
+import { useCookies } from "react-cookie";
 
 import eye from "assets/icons/eye.svg";
 import eyeClosed from "assets/icons/look.svg";
@@ -17,6 +18,9 @@ const Registration = () => {
   const [submitMessages, setSubmitMessages] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  // eslint-disable-next-line no-unused-vars
+  const [userCookie, setUserCookie] = useCookies(["user"]);
 
   const togglePasswordVisiblity = () => {
     setPasswordShown(!passwordShown);
@@ -61,7 +65,9 @@ const Registration = () => {
       setSubmitMessages(messages);
 
       setTimeout(() => {
-        settingAuth(authResult);
+        setUserCookie("user", authResult);
+        settingUser(authResult);
+        settingCookie(authResult);
       }, 2000);
     }
   };
@@ -104,7 +110,9 @@ const Registration = () => {
       setSubmitMessages(messages);
 
       setTimeout(() => {
-        settingAuth(authResult);
+        setUserCookie("user", authResult);
+        settingCookie(authResult);
+        settingUser(authResult);
       }, 2000);
     }
 

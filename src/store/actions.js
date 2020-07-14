@@ -1,9 +1,9 @@
 import { setGlobalState } from "store/store";
 
-export const settingAuth = (newState) => {
-  setGlobalState("auth", () => newState);
+export const settingUser = (user) => {
+  setGlobalState("user", () => user);
 };
 
-export const settingWords = (newState) => {
-  setGlobalState("words", () => newState);
+export const settingCookie = (cookie) => {
+  setGlobalState("userCookie", () => cookie);
 };
