@@ -10,9 +10,10 @@ export const createUser = async (user) => {
       body: JSON.stringify(user),
     }
   );
-  const content = await rawResponse.json();
-  return { content };
+
+  return rawResponse;
 };
+
 export const loginUser = async (user) => {
   const rawResponse = await fetch(
     "https://afternoon-falls-25894.herokuapp.com/signin",
@@ -25,9 +26,10 @@ export const loginUser = async (user) => {
       body: JSON.stringify(user),
     }
   );
-  const content = await rawResponse.json();
-  return content;
+
+  return rawResponse;
 };
+
 export const getData = (level, numberPage) => {
   let items = [];
   let group = 0;

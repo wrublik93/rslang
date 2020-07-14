@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
+import { useGlobalState } from "store/store";
 
 import { routeNamesMap } from "constants/constants";
 
@@ -40,26 +41,71 @@ const App = () => {
     });
   }, [history]);
 
+  const [auth] = useGlobalState("auth");
+
   return (
     <>
       <Header />
       <Main>
         <Switch>
-          <Route exact path="/" component={Registration} />
-          <Route path="/home" component={Home} />
-          <Route path="/games" component={GamesPage} />
-          <Route path="/aboutUs" component={AboutUs} />
-          <Route path="/vocabulary" component={Vocabulary} />
-          <Route path="/statistic" component={Statistic} />
-          <Route path="/speakIt" component={SpeakIt} />
-          <Route path="/englishPuzzle" component={EnglishPuzzle} />
-          <Route path="/savanna" component={Savanna} />
-          <Route path="/audioChallenge" component={AudioChallenge} />
-          <Route path="/sprint" component={Sprint} />
-          <Route path="/ourCustomGame" component={OurCustomGame} />
-          <Route path="/englishTest" component={EnglishTest} />
-          <Route path="/guess" component={GuessCard} />
+          <Route exact path="/" component={Registration}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/home" component={Home}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/games" component={GamesPage}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/aboutUs" component={AboutUs}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/vocabulary" component={Vocabulary}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/statistic" component={Statistic}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/speakIt" component={SpeakIt}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/englishPuzzle" component={EnglishPuzzle}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/savanna" component={Savanna}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/audioChallenge" component={AudioChallenge}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/sprint" component={Sprint}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/ourCustomGame" component={OurCustomGame}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/englishTest" component={EnglishTest}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
+          <Route path="/guess" component={GuessCard}>
+            {!auth.authStatus && <Registration />}
+          </Route>
+
           <Route path="/404" component={PageNotFound} />
+
           <Route path="*">
             <Redirect to="/404" />
           </Route>

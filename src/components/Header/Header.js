@@ -4,11 +4,15 @@ import { Link } from "react-router-dom";
 import "components/Header/style.scss";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
+import { useGlobalState } from "store/store";
+
 import classNames from "classnames";
 
 import Logo from "components/Logo";
 
-const Header = ({ user }) => {
+const Header = () => {
+  const [auth] = useGlobalState("auth");
+
   return (
     <header className="header">
       <Navbar className="header__nav" bg="dark" variant="dark" expand="lg">
@@ -101,19 +105,17 @@ const Header = ({ user }) => {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
-        <Navbar.Text className="header__login">
-          Signed in as:{" "}
-          <a href="#login" className="text-success">
-            {user}
-          </a>
+        <Navbar.Text>
+          {auth.email && (
+            <>
+              <div>Signed in as:</div>
+              <div>{auth.email}</div>
+            </>
+          )}
         </Navbar.Text>
       </Navbar>
     </header>
   );
-};
-
-Header.defaultProps = {
-  user: "RS Student",
 };
 
 export default Header;
