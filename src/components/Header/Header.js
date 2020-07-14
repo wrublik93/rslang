@@ -28,7 +28,7 @@ const Header = () => {
           <Nav.Link as={Link} to="/home" className="nav-link">
             <h1 className="header__title">
               <Logo className="logo-size_small" />
-              RS Lang
+              <span className="ml-2">RS Lang</span>
             </h1>
           </Nav.Link>
         </Navbar.Brand>
@@ -37,7 +37,11 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <div className="nav-item">
-              <Nav.Link as={Link} to="/games" className="nav-link">
+              <Nav.Link
+                as={Link}
+                to="/games"
+                className="nav-link bg-primary text-white"
+              >
                 Games
               </Nav.Link>
 
@@ -117,7 +121,7 @@ const Header = () => {
           {user.email && (
             <>
               <div>Signed in as:</div>
-              <div>{user.email}</div>
+              <div className="text-success">{user.email}</div>
               <Button variant="danger" onClick={handleLogout}>
                 Logout
               </Button>

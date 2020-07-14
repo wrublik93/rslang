@@ -26,7 +26,7 @@ const AboutUs = () => {
     alesya,
   ];
   return (
-    <Container fluid>
+    <Container fluid className="pb-4">
       <Row className="justify-content-center">
         <Col xs={12} lg={11} xl={9}>
           <CardDeck className="participants">

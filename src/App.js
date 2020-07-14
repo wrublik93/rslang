@@ -6,7 +6,6 @@ import { useCookies } from "react-cookie";
 
 import { routeNamesMap } from "constants/constants";
 
-import Footer from "components/Footer";
 import GuessCard from "components/GuessCard";
 import Header from "components/Header";
 import Main from "components/Main";
@@ -60,7 +59,7 @@ const App = () => {
       <Main>
         <Switch>
           <Route exact path="/" component={Registration}>
-            {!userStore.authStatus && <Registration />}
+            {!userStore.authStatus ? <Registration /> : <Redirect to="/home" />}
           </Route>
 
           <Route path="/home" component={Home}>
@@ -122,7 +121,6 @@ const App = () => {
           </Route>
         </Switch>
       </Main>
-      <Footer />
     </>
   );
 };

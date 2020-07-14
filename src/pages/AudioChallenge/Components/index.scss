@@ -135,7 +135,7 @@
   background-image: url("../../../assets/AudioChallenge/image/backGame.png");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 85vh;
+  height: calc(100vh - 118px);
   width: 100vw;
   display: flex;
   flex-direction: column;
