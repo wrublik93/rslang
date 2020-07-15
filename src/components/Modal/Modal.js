@@ -126,6 +126,8 @@ function Modal({ setShowModal }) {
             id="checkbox-3"
             onChange={handleCheckboxSetSettings}
           />
+        </Form.Group>
+        <Form.Group>
           <Form.Check
             name="isSentencesTranslation"
             label="translation of example, meaning sentences"
@@ -134,8 +136,6 @@ function Modal({ setShowModal }) {
             id="checkbox-4"
             onChange={handleCheckboxSetSettings}
           />
-        </Form.Group>
-        <Form.Group>
           <Form.Check
             name="isPicture"
             label="show picture"
