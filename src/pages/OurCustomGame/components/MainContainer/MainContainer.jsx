@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Button } from "react-bootstrap";
-import winImage from "assets/ourCustomGame/win.png";
 import Timer from "pages/OurCustomGame/components/Timer";
 import CardField from "pages/OurCustomGame/components/CardField";
 import Results from "pages/OurCustomGame/components/Results";
 import "pages/OurCustomGame/components/MainContainer/style.scss";
+import { imageWinUrl } from "pages/OurCustomGame/constants";
 
 function MainContainer({ words, changeLevel }) {
   const [gameIsOver, setGameIsOver] = useState(false);
@@ -44,7 +44,7 @@ function MainContainer({ words, changeLevel }) {
     <div className="main-container">
       <Timer gameIsOver={gameIsOver} words={words} />
       <div className={`main-container-end ${gameIsOver ? "full" : ""}`}>
-        <img src={winImage} alt="congratulations" />
+        <img alt="congratulations" src={imageWinUrl} />
         <div className="main-container-end-btns">
           <Button variant="outline-success" onClick={changeLevel}>
             Next

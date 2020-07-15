@@ -6,5 +6,7 @@ const PAGES_ARRAY = new Array(30)
 const LEVELS_ARRAY = new Array(6).fill(0).map((item, index) => index);
 const DATA_URL =
   "https://raw.githubusercontent.com/SavichAnastasia/rslang-data/master/";
+const imageWinUrl = `https://raw.githubusercontent.com/
+Alexey-Koren/rslang/assets/assets/OurCustomGame/win.png`;
 
-export { DIFFICULTY_ARRAY, LEVELS_ARRAY, PAGES_ARRAY, DATA_URL };
+export { DIFFICULTY_ARRAY, LEVELS_ARRAY, PAGES_ARRAY, DATA_URL, imageWinUrl };
