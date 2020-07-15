@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Spinner, Image, Card, Button, Modal } from "react-bootstrap";
-import PlayImage from "assets/speakIt/imgSpeakIt/play-icon.png";
-import MainImage from "assets/speakIt/imgSpeakIt/main-image.png";
 
 import { getDataSpeakIt } from "services/services";
 import "pages/SpeakIt/components/GameSpeakIt/style.scss";
 
 const GameSpeakIt = ({ levelGame, setStartGame }) => {
+  const PlayImage = `https://raw.githubusercontent.com/Alexey-Koren/
+rslang/assets/assets/SpeakIt/play.png`;
+  const MainImage = `https://raw.githubusercontent.com/Alexey-Koren/
+rslang/assets/assets/SpeakIt/main-image.png`;
   const databaseURL = "https://raw.githubusercontent.com/";
   const githubUser = "wrublik93/rslang-data/master/data/";
   const [show, setShow] = useState(false);
