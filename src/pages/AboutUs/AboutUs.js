@@ -8,7 +8,6 @@ import ivan from "assets/images/about-us-page/ivan.jpeg";
 import alexey from "assets/images/about-us-page/alexey.jpeg";
 import anastasia from "assets/images/about-us-page/anastasia.jpeg";
 import konstantsin from "assets/images/about-us-page/konstantsin.jpeg";
-import ulyana from "assets/images/about-us-page/ulyana.jpeg";
 import evgeniya from "assets/images/about-us-page/evgeniya.jpeg";
 import yuriy from "assets/images/about-us-page/yuriy.jpeg";
 import alesya from "assets/images/about-us-page/alesya.jpeg";
@@ -20,7 +19,6 @@ const AboutUs = () => {
     ivan,
     anastasia,
     konstantsin,
-    ulyana,
     evgeniya,
     yuriy,
     alesya,
@@ -28,7 +26,7 @@ const AboutUs = () => {
   return (
     <Container fluid className="pb-4">
       <Row className="justify-content-center">
-        <Col xs={12} lg={11} xl={9}>
+        <Col xs={7} lg={7} xl={7}>
           <CardDeck className="participants">
             {participants &&
               participants.map((participant) => {
@@ -50,9 +48,8 @@ const AboutUs = () => {
                           <span className="surname">{participant.surname}</span>
                         </h2>
                       </Card.Title>
-                      <Card.Text className="participants__description-block">
-                        <h5>{participant.position}</h5>
-                        <p>{participant.contribution}</p>
+                      <Card.Text className="participants__description-block h5">
+                        {participant.position}
                       </Card.Text>
                     </Card.Body>
                   </Card>

@@ -66,19 +66,6 @@
   },
   {
     "id": "6",
-    "name": "Ulyana",
-    "surname": "Luna",
-    "position": "Developer",
-    "contribution": "vacant seat for your work",
-    "contacts": [
-      {
-        "link": "https://github.com",
-        "icon": "github"
-      }
-    ]
-  },
-  {
-    "id": "7",
     "name": "Evgeniya",
     "surname": "Ivanova",
     "position": "Developer",
@@ -91,7 +78,7 @@
     ]
   },
   {
-    "id": "8",
+    "id": "7",
     "name": "Yuriy",
     "surname": "Shilenkov",
     "position": "Developer",
@@ -105,7 +92,7 @@
     ]
   },
   {
-    "id": "9",
+    "id": "8",
     "name": "Alesya",
     "surname": "Zarembo",
     "position": "Developer",
