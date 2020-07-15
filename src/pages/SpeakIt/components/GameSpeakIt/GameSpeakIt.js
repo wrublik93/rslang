@@ -310,7 +310,11 @@ rslang/assets/assets/SpeakIt/main-image.png`;
           </>
         )}
 
-        <Modal show={show} onHide={handleClose}>
+        <Modal
+          show={show}
+          onHide={handleClose}
+          className="speak-it-modal-results"
+        >
           <Modal.Header closeButton>
             <Modal.Title>Results Game</Modal.Title>
           </Modal.Header>
@@ -320,8 +324,15 @@ rslang/assets/assets/SpeakIt/main-image.png`;
             </div>
             <div>
               {resultsRightGame.map((item) => (
-                <Card key={item.word} className="speak-it-card-answers">
-                  <Card.Text>{item.word}</Card.Text>
+                <Card
+                  key={item.word}
+                  className="speak-it-card-answers"
+                  onClick={handleCLickAnswers}
+                  data-audio={item.audio}
+                >
+                  <Card.Text data-audio={item.audio}>
+                    {item.word} - {item.translation}
+                  </Card.Text>
                 </Card>
               ))}
             </div>

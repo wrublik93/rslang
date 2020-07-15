@@ -128,7 +128,7 @@
 
 .speak-it-disabled-element {
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .speak-it-correct-answer {
@@ -421,4 +421,8 @@
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+}
+
+.speak-it-modal-results {
+  top: 0;
 }
