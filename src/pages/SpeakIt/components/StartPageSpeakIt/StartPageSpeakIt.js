@@ -21,15 +21,23 @@ const StartPageSpeakIt = ({ setStartGame, setLevelGame, levelGame }) => {
   return (
     <CommonStartScreen title="Speak it" onStartClick={handleClickStart}>
       <Card.Body>
-        <Card.Title>Click on the words to hear them sound</Card.Title>
-        <Card.Text>
+        <Card.Title className="text-center">
+          Click on the words to hear them sound
+        </Card.Title>
+        <Card.Text className="text-center">
           Click on the button and speak the words into the microphone
         </Card.Text>
-        <Card.Text>Select the difficulty level: {levelGame + 1}</Card.Text>
+        <Card.Text className="text-center">
+          Select the difficulty level: {levelGame + 1}
+        </Card.Text>
         <ButtonToolbar className="speak-it-level-toolbar">
           <ButtonGroup className="mr-2" aria-label="First group">
             {levelButtons.map((button) => (
-              <Button key={button} onClick={handleClickLevel}>
+              <Button
+                key={button}
+                onClick={handleClickLevel}
+                className="speak-it-button-level"
+              >
                 {button}
               </Button>
             ))}

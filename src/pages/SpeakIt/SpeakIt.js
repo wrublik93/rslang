@@ -9,7 +9,7 @@ const SpeakIt = () => {
 
   return (
     <div className="speak-it-main">
-      <div className="speak-it-wrapper">
+      <div>
         {!startGame && (
           <StartPageSpeakIt
             setStartGame={setStartGame}
@@ -18,7 +18,11 @@ const SpeakIt = () => {
           />
         )}
         {startGame && (
-          <GameSpeakIt startGame={startGame} levelGame={levelGame} />
+          <GameSpeakIt
+            startGame={startGame}
+            setStartGame={setStartGame}
+            levelGame={levelGame}
+          />
         )}
       </div>
     </div>

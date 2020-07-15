@@ -62,7 +62,7 @@
 .speak-it-word-translation {
   text-align: center;
   font-size: 20px;
-  color: black;
+  color: #343a40;
   width: 370px;
   margin: 0 auto 30px auto;
   border-bottom: 2px solid #a7a7a7;
@@ -73,7 +73,7 @@
 .speak-it-score-game {
   text-align: center;
   font-size: 20px;
-  color: black;
+  color: #343a40;
   width: 370px;
   margin: 15px auto 0px auto;
   border-bottom: 2px solid #a7a7a7;
@@ -128,7 +128,7 @@
 
 .speak-it-disabled-element {
   pointer-events: none;
-  opacity: 0.4;
+  opacity: 0.8;
 }
 
 .speak-it-correct-answer {
@@ -143,4 +143,282 @@
 
 .speak-it-record-speech-start {
   background: red;
+}
+
+.speak-it-level {
+  text-align: center;
+  color: #343a40;
+  font-size: 21px;
+}
+
+@media (max-width: 1030px) {
+  .speak-it-words-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 0 auto;
+    grid-gap: 15px;
+    max-width: 700px;
+  }
+
+  .speak-it-control-buttons-game {
+    max-width: 700px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .speak-it-control-buttons {
+    max-width: 700px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 15px;
+  }
+
+.speak-it-button-new-words,
+.speak-it-button-start-game,
+.speak-it-button-results {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-button-stop-game,
+.speak-it-button-restart-game,
+.speak-it-button-pause-game,
+.speak-it-button-results-game {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+}
+
+@media (max-width: 750px) {
+  .speak-it-words-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    grid-gap: 15px;
+    max-width: 500px;
+  }
+
+  .speak-it-control-buttons-game {
+    max-width: 500px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+  .speak-it-control-buttons {
+    max-width: 500px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+  }
+
+.speak-it-button-new-words,
+.speak-it-button-start-game,
+.speak-it-button-results {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-button-stop-game,
+.speak-it-button-restart-game,
+.speak-it-button-pause-game,
+.speak-it-button-results-game {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+}
+
+@media (max-width: 550px) {
+  .speak-it-words-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    grid-gap: 15px;
+    max-width: 400px;
+  }
+
+  .speak-it-control-buttons-game {
+    max-width: 400px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+
+  .speak-it-control-buttons {
+    max-width: 400px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+
+.speak-it-button-new-words,
+.speak-it-button-start-game,
+.speak-it-button-results {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-button-stop-game,
+.speak-it-button-restart-game,
+.speak-it-button-pause-game,
+.speak-it-button-results-game {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+}
+
+@media (max-width: 460px) {
+  .speak-it-words-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    padding: 0 5;
+    grid-gap: 15px;
+    max-width: 270px;
+  }
+
+  .speak-it-control-buttons-game {
+    max-width: 270px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+
+  .speak-it-control-buttons {
+    max-width: 270px;
+    margin: 40px auto;
+    display: grid;
+    /*  grid-template-areas: "new game results"; */
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+  }
+
+.speak-it-button-new-words,
+.speak-it-button-start-game,
+.speak-it-button-results {
+  padding: 15px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-button-stop-game,
+.speak-it-button-restart-game,
+.speak-it-button-pause-game,
+.speak-it-button-results-game {
+  color: #ffffff;
+  background-color: #a7a7a7;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  box-shadow: 0 0 3px #fff;
+  font-family: 'Roboto', sans-serif;
+  outline: none;
+}
+
+.speak-it-word-translation {
+  text-align: center;
+    font-size: 16px;
+    width: 270px;
+    margin: 0 auto 30px auto;
+    border-bottom: 2px solid #a7a7a7;
+}
+
+.speak-it-score-game {
+  text-align: center;
+  font-size: 16px;
+  width: 270px;
+  margin: 15px auto 0px auto;
+  border-bottom: 2px solid #a7a7a7;
+}
+
+.speak-it-image-container {
+  width: 270px;
+  height: 140px;
+  text-align: center;
+  margin: 20px auto 20px auto;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.speak-it-image {
+  width: 270px;
+  height: 150px;
+}
+
+}
+
+.speak-it-right-answers {
+  text-align: center;
+  color: green;
+  font-weight: bold;
+}
+
+.speak-it-wrong-answers {
+  text-align: center;
+  color: red;
+  font-weight: bold;
+}
+
+.speak-it-card-answers {
+  margin-bottom: 5px;
+  padding: 3px;
+}
+
+.speak-it-card-answers:hover {
+  cursor: pointer;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }

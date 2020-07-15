@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Spinner, Image, Card, Button, Modal } from "react-bootstrap";
-import PlayImage from "assets/speakIt/imgSpeakIt/play.png";
+import PlayImage from "assets/speakIt/imgSpeakIt/play-icon.png";
 import MainImage from "assets/speakIt/imgSpeakIt/main-image.png";
 
 import { getDataSpeakIt } from "services/services";
 import "pages/SpeakIt/components/GameSpeakIt/style.scss";
 
-const GameSpeakIt = ({ levelGame }) => {
+const GameSpeakIt = ({ levelGame, setStartGame }) => {
   const databaseURL = "https://raw.githubusercontent.com/";
   const githubUser = "wrublik93/rslang-data/master/data/";
   const [show, setShow] = useState(false);
@@ -110,6 +110,7 @@ const GameSpeakIt = ({ levelGame }) => {
     setMainImage(MainImage);
     setResultsRightGame(rightAnswers);
     setResultsWrongGame(wrongAnswers);
+    setShow(true);
   };
 
   const handleClickPauseHelp = () => {
@@ -153,6 +154,9 @@ const GameSpeakIt = ({ levelGame }) => {
         });
         localStorage.setItem("score", score);
         setScoreGame(`Score: ${localStorage.getItem("score")}`);
+        if (score === 10) {
+          handleClickStopGame();
+        }
       }
     };
     recognition.onend = () => {
@@ -169,6 +173,21 @@ const GameSpeakIt = ({ levelGame }) => {
     });
   };
 
+  const handleChangeStartGame = () => {
+    setStartGame(false);
+  };
+
+  const handleCLickAnswers = (e) => {
+    const audioData = e.target.dataset.audio;
+    const audioURL = `${databaseURL}${githubUser}${audioData.replace(
+      "files/",
+      ""
+    )}`;
+    const audio = document.querySelector(".audio");
+    audio.src = audioURL;
+    audio.autoplay = true;
+  };
+
   useEffect(() => {
     const page = getRandomPage(0, 29);
     const getWords = async () => {
@@ -181,141 +200,158 @@ const GameSpeakIt = ({ levelGame }) => {
   }, [level]);
 
   return (
-    <>
-      <div className="text-center">Level: {levelGame + 1}</div>
-      <audio className="audio">
-        <track kind="captions" />
-      </audio>
-      <div className="speak-it-score-game">{scoreGame}</div>
-      <div className="speak-it-image-container">
-        <Image className="speak-it-image" src={mainImage} />
-      </div>
-      <div className="speak-it-word-translation">{translation}</div>
-      {isLoading ? (
-        <div className="speak-it-loading-spinner">
-          <Spinner animation="border" variant="dark" />
+    <div className="speak-it-game">
+      <div className="speak-it-wrapper">
+        <div className="speak-it-level">Level: {levelGame + 1}</div>
+        <audio className="audio">
+          <track kind="captions" />
+        </audio>
+        <div className="speak-it-score-game">{scoreGame}</div>
+        <div className="speak-it-image-container">
+          <Image className="speak-it-image" src={mainImage} />
         </div>
-      ) : (
-        <>
-          <div className="speak-it-words-container">
-            {words.map((item) => (
-              <Card
-                key={item.word}
-                data-word={item.word}
-                data-audio={item.audio}
-                data-image={item.image}
-                data-translation={item.wordTranslate}
-                onClick={handleClickWord}
-                className={classesCard}
-              >
-                <Image
-                  className="speak-it-word-block-play"
-                  src={PlayImage}
-                  data-audio={item.audio}
-                  data-image={item.image}
-                  data-translation={item.wordTranslate}
-                  alt="Play"
-                />
-                <div
-                  className="speak-it-word-block-word"
-                  data-audio={item.audio}
-                  data-image={item.image}
-                  data-translation={item.wordTranslate}
-                >
-                  {item.word}
-                </div>
-                <div
-                  className="speak-it-word-block-transcription"
-                  data-audio={item.audio}
-                  data-image={item.image}
-                  data-translation={item.wordTranslate}
-                >
-                  {item.transcription}
-                </div>
-              </Card>
-            ))}
+        <div className="speak-it-word-translation">{translation}</div>
+        {isLoading ? (
+          <div className="speak-it-loading-spinner">
+            <Spinner animation="border" variant="dark" />
           </div>
-          {isStartSpeak ? (
-            <div className="speak-it-control-buttons-game">
-              <Button
-                className="speak-it-button-stop-game"
-                onClick={handleClickStopGame}
-              >
-                Stop Game
-              </Button>
-              <Button
-                className={classesRecord}
-                variant={variantRecord}
-                onClick={handleClickRecordSpeech}
-              >
-                Record speech
-              </Button>
-              <Button
-                className="speak-it-button-pause-game"
-                onClick={handleClickPauseHelp}
-              >
-                Pause for help
-              </Button>
-              <Button
-                className="speak-it-button-results-game"
-                onClick={handleClickResetRightAnswers}
-              >
-                Reset
-              </Button>
+        ) : (
+          <>
+            <div className="speak-it-words-container">
+              {words.map((item) => (
+                <Card
+                  key={item.word}
+                  data-word={item.word}
+                  data-audio={item.audio}
+                  data-image={item.image}
+                  data-translation={item.wordTranslate}
+                  onClick={handleClickWord}
+                  className={classesCard}
+                >
+                  <Image
+                    className="speak-it-word-block-play"
+                    src={PlayImage}
+                    data-audio={item.audio}
+                    data-image={item.image}
+                    data-translation={item.wordTranslate}
+                    alt="Play"
+                  />
+                  <div
+                    className="speak-it-word-block-word"
+                    data-audio={item.audio}
+                    data-image={item.image}
+                    data-translation={item.wordTranslate}
+                  >
+                    {item.word}
+                  </div>
+                  <div
+                    className="speak-it-word-block-transcription"
+                    data-audio={item.audio}
+                    data-image={item.image}
+                    data-translation={item.wordTranslate}
+                  >
+                    {item.transcription}
+                  </div>
+                </Card>
+              ))}
             </div>
-          ) : (
-            <div className="speak-it-control-buttons">
-              <Button
-                className="speak-it-button-new-words"
-                onClick={handleClickReset}
-              >
-                New words
-              </Button>
-              <Button
-                className="speak-it-button-start-game"
-                onClick={handleStartGame}
-              >
-                Start speak
-              </Button>
-              <Button className="speak-it-button-results" onClick={handleShow}>
-                Results
-              </Button>
-            </div>
-          )}
-        </>
-      )}
+            {isStartSpeak ? (
+              <div className="speak-it-control-buttons-game">
+                <Button
+                  className="speak-it-button-stop-game"
+                  onClick={handleClickStopGame}
+                >
+                  Stop Game
+                </Button>
+                <Button
+                  className={classesRecord}
+                  variant={variantRecord}
+                  onClick={handleClickRecordSpeech}
+                >
+                  Record speech
+                </Button>
+                <Button
+                  className="speak-it-button-pause-game"
+                  onClick={handleClickPauseHelp}
+                >
+                  Pause for help
+                </Button>
+                <Button
+                  className="speak-it-button-results-game"
+                  onClick={handleClickResetRightAnswers}
+                >
+                  Reset
+                </Button>
+              </div>
+            ) : (
+              <div className="speak-it-control-buttons">
+                <Button
+                  className="speak-it-button-new-words"
+                  onClick={handleClickReset}
+                >
+                  New words
+                </Button>
+                <Button
+                  className="speak-it-button-start-game"
+                  onClick={handleStartGame}
+                >
+                  Start speak
+                </Button>
+                <Button
+                  className="speak-it-button-results"
+                  onClick={handleShow}
+                >
+                  Results
+                </Button>
+              </div>
+            )}
+          </>
+        )}
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Results Last Game</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div>Right Answers: {resultsRightGame.length}</div>
-          <div>
-            {resultsRightGame.map((item) => (
-              <Card key={item.word}>
-                <Card.Text>{item.word}</Card.Text>
-              </Card>
-            ))}
-          </div>
-          <div>Wrong Answers: {resultsWrongGame.length}</div>
-          <div>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Results Game</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="speak-it-right-answers">
+              Right Answers: {resultsRightGame.length}
+            </div>
             <div>
-              {resultsWrongGame.map((item) => (
-                <Card>
+              {resultsRightGame.map((item) => (
+                <Card key={item.word} className="speak-it-card-answers">
                   <Card.Text>{item.word}</Card.Text>
                 </Card>
               ))}
             </div>
-          </div>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+            <div className="speak-it-wrong-answers">
+              Wrong Answers: {resultsWrongGame.length}
+            </div>
+            <div>
+              <div>
+                {resultsWrongGame.map((item) => (
+                  <Card
+                    key={item.word}
+                    className="speak-it-card-answers"
+                    onClick={handleCLickAnswers}
+                    data-audio={item.audio}
+                  >
+                    <Card.Text data-audio={item.audio}>
+                      {item.word} - {item.translation}
+                    </Card.Text>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={handleChangeStartGame}>Change level</Button>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    </div>
   );
 };
 

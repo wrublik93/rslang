@@ -1,10 +1,21 @@
  .speak-it-main {
-   width: 100%;
+  width: 100%;
  }
+
+ .speak-it-game {
+   /* width: 100%;
+   background: url('../../assets/speakIt/imgSpeakIt/background-black.jpg') no-repeat center center fixed;
+  background-size: cover; */
+}
 
  .speak-it-wrapper {
   max-width: 1020px;
   padding: 0 40px;
   margin: 0 auto;
   box-sizing: border-box;
+  @media (max-width: 460px) {
+    padding: 0 10px;
+
+  }
  }
+
