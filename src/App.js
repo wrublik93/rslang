@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch, useHistory } from "react-router-dom";
 import { useGlobalState } from "store/store";
 import { settingCookie } from "store/actions";
@@ -9,7 +9,6 @@ import { routeNamesMap } from "constants/constants";
 import GuessCard from "components/GuessCard";
 import Header from "components/Header";
 import Main from "components/Main";
-
 import AboutUs from "pages/AboutUs";
 import AudioChallenge from "pages/AudioChallenge";
 import EnglishPuzzle from "pages/EnglishPuzzle";
@@ -21,7 +20,6 @@ import Savanna from "pages/Savanna";
 import SpeakIt from "pages/SpeakIt";
 import Vocabulary from "pages/Vocabulary";
 import Statistic from "pages/Statistic";
-
 import Sprint from "pages/Sprint";
 import EnglishTest from "pages/EnglishTest";
 import GamesPage from "pages/GamesPage";
@@ -35,6 +33,8 @@ const handleChange = (routeName) => {
 };
 
 const App = () => {
+  const [userLevel, setUserLevel] = useState("");
+
   const history = useHistory();
 
   const [userStore, setUserStore] = useGlobalState("user");
@@ -55,7 +55,7 @@ const App = () => {
 
   return (
     <>
-      <Header />
+      <Header userLevel={userLevel} />
       <Main>
         <Switch>
           <Route exact path="/" component={Registration}>
@@ -106,10 +106,15 @@ const App = () => {
             {!userStore.authStatus && <Registration />}
           </Route>
 
-          <Route path="/englishTest" component={EnglishTest}>
+          <Route
+            path="/englishTest"
+            component={() => (
+              <EnglishTest setUserLevel={setUserLevel} userLevel={userLevel} />
+            )}
+          >
             {!userStore.authStatus && <Registration />}
           </Route>
-
+          <Route path="/englishTest" />
           <Route path="/guess" component={GuessCard}>
             {!userStore.authStatus && <Registration />}
           </Route>

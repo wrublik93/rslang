@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import { Button, Card, ListGroup } from "react-bootstrap";
 import "pages/Sprint/components/GameOverSprint/style.scss";
 
@@ -8,6 +9,10 @@ const GameOverSprint = ({ rightAnswers, wrongAnswers, resultScore }) => {
     if (isCheck) setArrayWords(1);
     else setArrayWords(2);
   }, []);
+  const history = useHistory();
+  const handleOnClick = (path) => {
+    history.push(`/${path}`);
+  };
 
   return (
     <>
@@ -16,6 +21,13 @@ const GameOverSprint = ({ rightAnswers, wrongAnswers, resultScore }) => {
         <Card.Body>
           <Card.Title>Your result {resultScore} points</Card.Title>
           <Card.Text>I like you</Card.Text>
+          <Button
+            variant="outline-primary"
+            className="home-button"
+            onClick={() => handleOnClick("home")}
+          >
+            Home
+          </Button>
         </Card.Body>
       </Card>
       <div className="result-buttons">

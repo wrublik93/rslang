@@ -3,14 +3,20 @@ import { useHistory } from "react-router-dom";
 import { Button, Card, ListGroup } from "react-bootstrap";
 import "pages/EnglishTest/components/EndTest/style.scss";
 
-const EndTest = ({ rightAnswer, wrongAnswer, resultTest, setLevel }) => {
+const EndTest = ({
+  rightAnswer,
+  wrongAnswer,
+  resultTest,
+  setLevel,
+  level,
+  setUserLevel,
+}) => {
   const history = useHistory();
   const handleOnClick = (path) => {
     history.push(`/${path}`);
   };
 
   const [isArrayWords, setArrayWords] = useState(0);
-  const [userLevel, setUserLevel] = useState("");
   const handlerClickCheck = useCallback((isCheck) => {
     if (isCheck) setArrayWords(1);
     else setArrayWords(2);
@@ -19,24 +25,30 @@ const EndTest = ({ rightAnswer, wrongAnswer, resultTest, setLevel }) => {
   useEffect(() => {
     if (resultTest < 4) {
       setLevel(0);
+
       setUserLevel("Beginner");
     } else if (resultTest >= 4 && resultTest < 6) {
       setLevel(1);
+
       setUserLevel("Elementary");
     } else if (resultTest >= 6 && resultTest < 9) {
       setLevel(2);
+
       setUserLevel("Pre-Intermediate");
     } else if (resultTest >= 9 && resultTest < 12) {
       setLevel(3);
+
       setUserLevel("Intermediate");
     } else if (resultTest >= 12 && resultTest < 14) {
       setLevel(4);
+
       setUserLevel("Upper Intermediate");
     } else if (resultTest >= 14) {
-      setLevel(4);
+      setLevel(5);
+
       setUserLevel("Advanced");
     }
-  }, [resultTest, setLevel]);
+  }, [resultTest, setLevel, setUserLevel]);
   return (
     <>
       <Card className="text-center">
@@ -44,7 +56,7 @@ const EndTest = ({ rightAnswer, wrongAnswer, resultTest, setLevel }) => {
           Cool result
         </Card.Header>
         <Card.Body>
-          <Card.Title>Your level {userLevel} </Card.Title>
+          <Card.Title>Your level {level} </Card.Title>
           <Card.Text>I like you</Card.Text>
 
           <Button

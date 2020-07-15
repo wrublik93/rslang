@@ -33,11 +33,19 @@ export const loginUser = async (user) => {
 export const getData = (level, numberPage) => {
   let items = [];
   let group = 0;
-  const requestSprint = "https://afternoon-falls-25894.herokuapp.com/words?";
+  const url = "https://afternoon-falls-25894.herokuapp.com/words?";
   const wordsData = async () => {
     if (group > numberPage) return items;
-    const urlWords = `${requestSprint}page=${level}&group=${group}`;
-    const words = await fetch(urlWords);
+
+    const rawResponse = await fetch(`${url}?page=${level}&group=${group}`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    const words = await rawResponse.json();
     items = [...items, ...words];
     group += 1;
     return wordsData();

@@ -10,7 +10,7 @@ import Logo from "components/Logo";
 
 import "components/Header/style.scss";
 
-const Header = () => {
+const Header = ({ userLevel }) => {
   const [user, setUser] = useGlobalState("user");
 
   // eslint-disable-next-line no-unused-vars
@@ -108,13 +108,16 @@ const Header = () => {
               Statistics
             </Nav.Link>
 
-            <Nav.Link as={Link} to="/englishTest" className="nav-link">
-              Test
-            </Nav.Link>
-
             <Nav.Link as={Link} to="/aboutUs" className="nav-link">
               About Us
             </Nav.Link>
+            {!userLevel ? (
+              <Nav.Link as={Link} to="/englishTest" className="nav-link">
+                Test
+              </Nav.Link>
+            ) : (
+              <Navbar.Text>{userLevel} </Navbar.Text>
+            )}
           </Nav>
         </Navbar.Collapse>
         <Navbar.Text>
