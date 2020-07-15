@@ -12,13 +12,11 @@ const GuessCard = (props) => {
   const [settings] = useGlobalState("settings");
   const { optional } = settings;
   const {
-    translation,
-    meaning,
-    textExampl,
-    picture,
-    transcript,
-    // autopronunciation,
-    // showBtn
+    isPicture,
+    isTranscription,
+    isWordTranslation,
+    isMeaningSentence,
+    isExampleSentence,
   } = optional;
 
   useEffect(() => {
@@ -65,7 +63,7 @@ const GuessCard = (props) => {
 
   const listData = [
     {
-      data: translation ? (
+      data: isWordTranslation ? (
         <h3 className={cardWordClass} key={1}>
           {wordTranslate
             ? wordTranslate.toString().toUpperCase()
@@ -75,7 +73,7 @@ const GuessCard = (props) => {
       id: 1,
     },
   ];
-  if (textExample && textExampl) {
+  if (textExample && isExampleSentence) {
     const id = listData[listData.length - 1].id + 1;
     listData.push({
       data: createSentenceListItem(textExample, textExampleTranslate),
@@ -83,7 +81,7 @@ const GuessCard = (props) => {
     });
   }
 
-  if (textMeaning && meaning) {
+  if (textMeaning && isMeaningSentence) {
     const id = listData[listData.length - 1].id + 1;
     listData.push({
       data: createSentenceListItem(textMeaning, textMeaningTranslate),
@@ -102,7 +100,7 @@ const GuessCard = (props) => {
             <Card.Body className={cardBodyClass}>
               <Container>
                 <Row className="crd__image-block">
-                  {picture && image && (
+                  {isPicture && image && (
                     <Col xs={12} md={6}>
                       <Image
                         src={url}
@@ -131,7 +129,9 @@ const GuessCard = (props) => {
 
               <Row className={cardInputBlockClass}>
                 <Col xs={4}>
-                  {transcript && transcription && <h6> {transcription} </h6>}
+                  {isTranscription && transcription && (
+                    <h6> {transcription} </h6>
+                  )}
                   <Form.Group
                     controlId="formGroupCard"
                     style={inputWidth}
