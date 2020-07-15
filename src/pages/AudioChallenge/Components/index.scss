@@ -2,43 +2,13 @@
     box-sizing: border-box;
 }
 
-.start-page {
-    position: fixed;
-    width: 100vw;
-    height: 85vh;
-    background-repeat: no-repeat;
-    background-image: url('../../../assets/AudioChallenge/image/background.png');
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+.app-describe-audio {
+    color: rgb(7, 25, 53);
+    font-weight: bold;
 }
 
-.hide-start-page {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    display: none;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.app-info {
-    text-align: center;
-}
-
-.appName {
-    font-size: 6vw;
-    color: whitesmoke;
-}
-
-.app-describe {
-    font-size: 2vw;
-    line-height: 1;
-    color: rgb(247, 226, 226);
-    padding: 40px 15px;
+.app-level-audio {
+  color: rgb(7, 25, 53);
 }
 
 .guide {

@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { Button, Card } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import "pages/AudioChallenge/Components/index.scss";
 
 const GameOverAudioCall = ({ rightAnswers, wrongAnswers, resultScore }) => {
@@ -9,6 +10,11 @@ const GameOverAudioCall = ({ rightAnswers, wrongAnswers, resultScore }) => {
     else setArrayWords(false);
   }, []);
 
+  const history = useHistory();
+  const handleOnClick = (path) => {
+    history.push(`/${path}`);
+  };
+
   return (
     <>
       <Card className="GameOver-text">
@@ -16,6 +22,7 @@ const GameOverAudioCall = ({ rightAnswers, wrongAnswers, resultScore }) => {
           Your result {resultScore} points
         </Card.Text>
       </Card>
+      <Button onClick={() => handleOnClick("home")}>Home</Button>
       <div className="result-buttons">
         <Button variant="outline-light" onClick={() => handlerClickCheck(true)}>
           right answers

@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { getDataTemp } from "services/services";
-import { Button } from "react-bootstrap";
+import { getData } from "services/services";
+import { Button, Spinner } from "react-bootstrap";
 import { RandomInteger, RightAnswer } from "utils/utils";
 import { LinkMed } from "constants/constants";
 import Correct from "assets/AudioChallenge/audio/correct.mp3";
 import ErrorSound from "assets/AudioChallenge/audio/error.mp3";
-import ImageWord from "assets/AudioChallenge/image/audio.png";
+import ImageWord from "assets/Vocabulary/sound.svg";
 
 const audioCorrect = new Audio(Correct);
 const audioError = new Audio(ErrorSound);
@@ -16,6 +16,7 @@ const GameAudioChallenge = ({
   setWrongAnswers,
   setendGamePages,
   setResultScore,
+  level,
 }) => {
   const [isDisabled, setDisabled] = useState(false);
   const [wordImg, setWordImg] = useState(false);
@@ -29,7 +30,7 @@ const GameAudioChallenge = ({
     audio: "",
     image: LinkMed,
   });
-  const [page, setPage] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const getNewRandomWord = useCallback((count, items) => {
     const randIndex = RandomInteger(0, count);
@@ -38,25 +39,17 @@ const GameAudioChallenge = ({
   }, []);
 
   useEffect(() => {
+    const pages = RandomInteger(0, 6);
     const getWords = async () => {
-      setPage(0);
-      const fetchData = getDataTemp(page);
+      const fetchData = getData(level, pages);
       const newWords = await fetchData();
       setWords(newWords);
       const current = newWords[newWords.length - 1];
       setCurrentWord(current);
+      setIsLoading(false);
     };
     getWords();
-  }, [page]);
-
-  useEffect(() => {
-    if (startGamePages) {
-      if (words.length === 110) {
-        setendGamePages(true);
-        setResultScore(point);
-      }
-    }
-  }, [page, startGamePages, words, setendGamePages, point, setResultScore]);
+  }, [level]);
 
   useEffect(() => {
     if (Object.values(currentWord).length && words.length) {
@@ -133,6 +126,23 @@ const GameAudioChallenge = ({
     [nextWord]
   );
 
+  useEffect(() => {
+    if (startGamePages) {
+      if (
+        words.length === 10 ||
+        words.length === 110 ||
+        words.length === 70 ||
+        words.length === 50 ||
+        words.length === 90 ||
+        words.length === 30 ||
+        point === 10
+      ) {
+        setendGamePages(true);
+        setResultScore(point);
+      }
+    }
+  }, [level, startGamePages, words, setendGamePages, point, setResultScore]);
+
   const handleUserKeyPress = useCallback(
     (event) => {
       const { keyCode } = event;
@@ -157,14 +167,14 @@ const GameAudioChallenge = ({
   );
 
   useEffect(() => {
-    window.addEventListener("keydown", handleUserKeyPress);
-    window.addEventListener("keydown", next);
+    window.addEventListener("keyup", handleUserKeyPress);
+    window.addEventListener("keyup", next);
 
     return () => {
-      window.removeEventListener("keydown", handleUserKeyPress);
-      window.removeEventListener("keydown", next);
+      window.removeEventListener("keyup", handleUserKeyPress);
+      window.removeEventListener("keyup", next);
     };
-  }, [handleUserKeyPress, next]);
+  }, [next, handleUserKeyPress]);
 
   return (
     <>
@@ -176,7 +186,6 @@ const GameAudioChallenge = ({
         <Button onClick={Sound}>
           <img src={ImageWord} className="Image-word" alt="logo" />
         </Button>
-
         {wordImg && (
           <img
             src={LinkMed + currentWord.image}
@@ -189,48 +198,54 @@ const GameAudioChallenge = ({
             {currentWord.word} - {currentWord.wordTranslate}
           </div>
         )}
-        <div className="button-translate">
-          <ol>
-            <Button
-              className="button-translate-word"
-              disabled={isDisabled}
-              onClick={() => handlerClickWord(translate[0])}
-            >
-              <li>{translate[0]}</li>
+        {isLoading ? (
+          <Spinner animation="border" variant="light" />
+        ) : (
+          <div>
+            <div className="button-translate">
+              <ol>
+                <Button
+                  className="button-translate-word"
+                  disabled={isDisabled}
+                  onClick={() => handlerClickWord(translate[0])}
+                >
+                  <li>{translate[0]}</li>
+                </Button>
+                <Button
+                  className="button-translate-word"
+                  disabled={isDisabled}
+                  onClick={() => handlerClickWord(translate[1])}
+                >
+                  <li>{translate[1]}</li>
+                </Button>
+                <Button
+                  className="button-translate-word"
+                  disabled={isDisabled}
+                  onClick={() => handlerClickWord(translate[2])}
+                >
+                  <li>{translate[2]}</li>
+                </Button>
+                <Button
+                  className="button-translate-word"
+                  disabled={isDisabled}
+                  onClick={() => handlerClickWord(translate[3])}
+                >
+                  <li>{translate[3]}</li>
+                </Button>
+                <Button
+                  className="button-translate-word"
+                  disabled={isDisabled}
+                  onClick={() => handlerClickWord(translate[4])}
+                >
+                  <li>{translate[4]}</li>
+                </Button>
+              </ol>
+            </div>
+            <Button className="button-next" onClick={nextWord}>
+              →
             </Button>
-            <Button
-              className="button-translate-word"
-              disabled={isDisabled}
-              onClick={() => handlerClickWord(translate[1])}
-            >
-              <li>{translate[1]}</li>
-            </Button>
-            <Button
-              className="button-translate-word"
-              disabled={isDisabled}
-              onClick={() => handlerClickWord(translate[2])}
-            >
-              <li>{translate[2]}</li>
-            </Button>
-            <Button
-              className="button-translate-word"
-              disabled={isDisabled}
-              onClick={() => handlerClickWord(translate[3])}
-            >
-              <li>{translate[3]}</li>
-            </Button>
-            <Button
-              className="button-translate-word"
-              disabled={isDisabled}
-              onClick={() => handlerClickWord(translate[4])}
-            >
-              <li>{translate[4]}</li>
-            </Button>
-          </ol>
-        </div>
-        <Button className="button-next" onClick={nextWord}>
-          →
-        </Button>
+          </div>
+        )}
       </div>
     </>
   );

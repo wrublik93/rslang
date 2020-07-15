@@ -53,21 +53,6 @@ export const getData = (level, numberPage) => {
   return wordsData;
 };
 
-export const getDataTemp = (page) => {
-  let items = [];
-  let group = 0;
-  const url = "https://afternoon-falls-25894.herokuapp.com/words?";
-  const wordsData = async () => {
-    if (group > 6) return items;
-    const responseWords = await fetch(`${url}?page=${page}&group=${group}`);
-    const words = await responseWords.json();
-    items = [...items, ...words];
-    group += 1;
-    return wordsData();
-  };
-  return wordsData;
-};
-
 export const getDataSpeakIt = (level, page) => {
   const requestSprint = "https://afternoon-falls-25894.herokuapp.com/words?";
   const wordsData = async () => {

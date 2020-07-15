@@ -11,6 +11,7 @@ const AudioChallenge = () => {
   const [rightAnswers, setRightAnswers] = useState([]);
   const [wrongAnswers, setWrongAnswers] = useState([]);
   const [resultScore, setResultScore] = useState(0);
+  const [level, setLevel] = useState(0);
 
   return (
     <>
@@ -18,11 +19,15 @@ const AudioChallenge = () => {
         <div className="App">
           <div className="App-header">
             {!startGamePages && !endGamePages && (
-              <StartGameAudio setstartGamePages={setstartGamePages} />
+              <StartGameAudio
+                setstartGamePages={setstartGamePages}
+                setLevel={setLevel}
+              />
             )}
 
             {startGamePages && !endGamePages && (
               <GameAudioChallenge
+                level={level}
                 startGamePages={startGamePages}
                 setRightAnswers={(word) =>
                   setRightAnswers([...rightAnswers, word])
