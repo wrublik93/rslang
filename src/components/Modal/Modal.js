@@ -9,17 +9,20 @@ function Modal({ setShowModal }) {
   const { wordsPerDay, optional } = settings;
   const {
     maxWords,
-    mixWords,
-    translation,
-    meaning,
-    textExampl,
-    picture,
-    transcript,
-    autopronunciation,
-    showBtn,
+    isMixWords,
+    isPicture,
+    isTranscript,
+    isAutoPronunciation,
+    isShowBtn,
+    isWordTranslation,
+    isSentencesTranslation,
+    isMeaningSentence,
+    isExampleSentence,
+    isDeleteBtn,
+    isHardWordBtn,
   } = optional;
 
-  const handdleChecboxSetSettings = (e) => {
+  const handleCheckboxSetSettings = (e) => {
     const newSettings = {
       ...settings,
       optional: {
@@ -37,7 +40,7 @@ function Modal({ setShowModal }) {
     settingSettings(newSettings);
   };
 
-  const handdleMaxWordsSetSettings = (e) => {
+  const handleMaxWordsSetSettings = (e) => {
     const newSettings = {
       ...settings,
       optional: {
@@ -48,7 +51,7 @@ function Modal({ setShowModal }) {
     settingSettings(newSettings);
   };
 
-  const handdleWordsPerDaySetSettings = (e) => {
+  const handleWordsPerDaySetSettings = (e) => {
     const newSettings = { ...settings, wordsPerDay: e.currentTarget.value };
     settingSettings(newSettings);
   };
@@ -68,7 +71,7 @@ function Modal({ setShowModal }) {
           <Form.Control
             as="select"
             value={wordsPerDay}
-            onChange={handdleWordsPerDaySetSettings}
+            onChange={handleWordsPerDaySetSettings}
           >
             <option>20</option>
             <option>40</option>
@@ -81,7 +84,7 @@ function Modal({ setShowModal }) {
             as="select"
             value={maxWords}
             name="maxWords"
-            onChange={handdleMaxWordsSetSettings}
+            onChange={handleMaxWordsSetSettings}
           >
             <option>40</option>
             <option>60</option>
@@ -93,35 +96,43 @@ function Modal({ setShowModal }) {
             type="checkbox"
             label="Mix my and new words"
             name="mixWords"
-            checked={mixWords}
-            onChange={handdleChecboxSetSettings}
+            checked={isMixWords}
+            onChange={handleCheckboxSetSettings}
           />
         </Form.Group>
         <Form.Group controlId="exampleForm.ControlSelect3">
           Select at least one word option:
           <Form.Check
-            name="translation"
-            label="translation"
+            name="wordTranslation"
+            label="translation of word"
             type="checkbox"
-            checked={translation}
+            checked={isWordTranslation}
             id="checkbox-1"
-            onChange={handdleChecboxSetSettings}
+            onChange={handleCheckboxSetSettings}
           />
           <Form.Check
-            name="meaning"
-            label="meaning"
+            name="meaningSentence"
+            label="meaning sentence"
             type="checkbox"
-            checked={meaning}
+            checked={isMeaningSentence}
             id="checkbox-2"
-            onChange={handdleChecboxSetSettings}
+            onChange={handleCheckboxSetSettings}
           />
           <Form.Check
-            name="textExampl"
-            label="text example"
+            name="exampleSentence"
+            label="example sentence"
             type="checkbox"
-            checked={textExampl}
+            checked={isExampleSentence}
             id="checkbox-3"
-            onChange={handdleChecboxSetSettings}
+            onChange={handleCheckboxSetSettings}
+          />
+          <Form.Check
+            name="sentencesTranslation"
+            label="translation of example, meaning sentences"
+            type="checkbox"
+            checked={isSentencesTranslation}
+            id="checkbox-4"
+            onChange={handleCheckboxSetSettings}
           />
         </Form.Group>
         <Form.Group>
@@ -129,33 +140,49 @@ function Modal({ setShowModal }) {
             name="picture"
             label="show picture"
             type="checkbox"
-            checked={picture}
-            id="checkbox-4"
-            onChange={handdleChecboxSetSettings}
+            checked={isPicture}
+            id="checkbox-5"
+            onChange={handleCheckboxSetSettings}
           />
           <Form.Check
             label="show transcript"
             name="transcript"
-            checked={transcript}
-            onChange={handdleChecboxSetSettings}
-            type="checkbox"
-            id="checkbox-5"
-          />
-          <Form.Check
-            label="autopronunciation"
-            name="autopronunciation"
-            checked={autopronunciation}
-            onChange={handdleChecboxSetSettings}
+            checked={isTranscript}
+            onChange={handleCheckboxSetSettings}
             type="checkbox"
             id="checkbox-6"
           />
           <Form.Check
-            label="show answer button"
-            name="showBtn"
-            checked={showBtn}
-            onChange={handdleChecboxSetSettings}
+            label="enable auto pronunciation"
+            name="autoPronunciation"
+            checked={isAutoPronunciation}
+            onChange={handleCheckboxSetSettings}
             type="checkbox"
             id="checkbox-7"
+          />
+          <Form.Check
+            label="show answer button"
+            name="showBtn"
+            checked={isShowBtn}
+            onChange={handleCheckboxSetSettings}
+            type="checkbox"
+            id="checkbox-8"
+          />
+          <Form.Check
+            label="delete word button"
+            name="deleteBtn"
+            checked={isDeleteBtn}
+            onChange={handleCheckboxSetSettings}
+            type="checkbox"
+            id="checkbox-9"
+          />
+          <Form.Check
+            label="hardWord answer button"
+            name="hardWordBtn"
+            checked={isHardWordBtn}
+            onChange={handleCheckboxSetSettings}
+            type="checkbox"
+            id="checkbox-10"
           />
         </Form.Group>
       </Form>
