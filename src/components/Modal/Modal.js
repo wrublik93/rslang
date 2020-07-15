@@ -31,11 +31,11 @@ function Modal({ setShowModal }) {
       },
     };
     if (
-      !newSettings.optional.translation &&
-      !newSettings.optional.meaning &&
-      !newSettings.optional.textExampl
+      !newSettings.optional.isWordTranslation &&
+      !newSettings.optional.isMeaningSentence &&
+      !newSettings.optional.isExampleSentence
     ) {
-      newSettings.optional.translation = true;
+      newSettings.optional.isWordTranslation = true;
     }
     settingSettings(newSettings);
   };
@@ -95,7 +95,7 @@ function Modal({ setShowModal }) {
           <Form.Check
             type="checkbox"
             label="Mix my and new words"
-            name="mixWords"
+            name="isMixWords"
             checked={isMixWords}
             onChange={handleCheckboxSetSettings}
           />
@@ -103,7 +103,7 @@ function Modal({ setShowModal }) {
         <Form.Group controlId="exampleForm.ControlSelect3">
           Select at least one word option:
           <Form.Check
-            name="wordTranslation"
+            name="isWordTranslation"
             label="translation of word"
             type="checkbox"
             checked={isWordTranslation}
@@ -111,7 +111,7 @@ function Modal({ setShowModal }) {
             onChange={handleCheckboxSetSettings}
           />
           <Form.Check
-            name="meaningSentence"
+            name="isMeaningSentence"
             label="meaning sentence"
             type="checkbox"
             checked={isMeaningSentence}
@@ -119,7 +119,7 @@ function Modal({ setShowModal }) {
             onChange={handleCheckboxSetSettings}
           />
           <Form.Check
-            name="exampleSentence"
+            name="isExampleSentence"
             label="example sentence"
             type="checkbox"
             checked={isExampleSentence}
@@ -127,7 +127,7 @@ function Modal({ setShowModal }) {
             onChange={handleCheckboxSetSettings}
           />
           <Form.Check
-            name="sentencesTranslation"
+            name="isSentencesTranslation"
             label="translation of example, meaning sentences"
             type="checkbox"
             checked={isSentencesTranslation}
@@ -137,7 +137,7 @@ function Modal({ setShowModal }) {
         </Form.Group>
         <Form.Group>
           <Form.Check
-            name="picture"
+            name="isPicture"
             label="show picture"
             type="checkbox"
             checked={isPicture}
@@ -146,7 +146,7 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="show transcript"
-            name="transcript"
+            name="isTranscript"
             checked={isTranscript}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
@@ -154,7 +154,7 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="enable auto pronunciation"
-            name="autoPronunciation"
+            name="isAutoPronunciation"
             checked={isAutoPronunciation}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
@@ -162,7 +162,7 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="show answer button"
-            name="showBtn"
+            name="isShowBtn"
             checked={isShowBtn}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
@@ -170,7 +170,7 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="delete word button"
-            name="deleteBtn"
+            name="isDeleteBtn"
             checked={isDeleteBtn}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
@@ -178,7 +178,7 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="hardWord answer button"
-            name="hardWordBtn"
+            name="isHardWordBtn"
             checked={isHardWordBtn}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
