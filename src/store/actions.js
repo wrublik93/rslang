@@ -11,7 +11,3 @@ export const settingCookie = (cookie) => {
 export const settingSettings = (newState) => {
   setGlobalState("settings", () => newState);
 };
-
-export const settingSettings = (newState) => {
-  setGlobalState("settings", () => newState);
-};
