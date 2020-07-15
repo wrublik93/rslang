@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
@@ -6,12 +6,16 @@ import classNames from "classnames";
 
 import { useGlobalState } from "store/store";
 
+import Modal from "components/Modal";
 import Logo from "components/Logo";
+
+import Settings from "assets/Settings.svg";
 
 import "components/Header/style.scss";
 
 const Header = ({ userLevel }) => {
   const [user, setUser] = useGlobalState("user");
+  const [showModal, setShowModal] = useState(false);
 
   // eslint-disable-next-line no-unused-vars
   const [userCookie, setUserCookie, removeUserCookie] = useCookies("user");
@@ -120,6 +124,15 @@ const Header = ({ userLevel }) => {
             )}
           </Nav>
         </Navbar.Collapse>
+        {user.email && (
+          <button
+            type="button"
+            className="nav-settings-btn"
+            onClick={() => setShowModal(!showModal)}
+          >
+            <img src={Settings} alt="settings" />
+          </button>
+        )}
         <Navbar.Text>
           {user.email && (
             <>
@@ -132,6 +145,7 @@ const Header = ({ userLevel }) => {
           )}
         </Navbar.Text>
       </Navbar>
+      {showModal ? <Modal setShowModal={setShowModal} /> : null}
     </header>
   );
 };

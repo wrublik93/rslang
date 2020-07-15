@@ -7,3 +7,7 @@ export const settingUser = (user) => {
 export const settingCookie = (cookie) => {
   setGlobalState("userCookie", () => cookie);
 };
+
+export const settingSettings = (newState) => {
+  setGlobalState("settings", () => newState);
+};

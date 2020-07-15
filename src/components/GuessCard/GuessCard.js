@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import "components/GuessCard/style.scss";
+import { useGlobalState } from "store/store";
 import Image from "components/Image/Image";
 import React, { useEffect, useRef } from "react";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
@@ -7,6 +8,19 @@ import createSentenceListItem from "components/GuessCard/createSentence";
 
 const GuessCard = (props) => {
   const textInput = useRef(null);
+
+  const [settings] = useGlobalState("settings");
+  const { optional } = settings;
+  const {
+    translation,
+    meaning,
+    textExampl,
+    picture,
+    transcript,
+    // autopronunciation,
+    // showBtn
+  } = optional;
+
   useEffect(() => {
     textInput.current.focus();
   }, []);
@@ -51,17 +65,17 @@ const GuessCard = (props) => {
 
   const listData = [
     {
-      data: (
+      data: translation ? (
         <h3 className={cardWordClass} key={1}>
           {wordTranslate
             ? wordTranslate.toString().toUpperCase()
             : "Sorry, no translation of word"}
         </h3>
-      ),
+      ) : null,
       id: 1,
     },
   ];
-  if (textExample) {
+  if (textExample && textExampl) {
     const id = listData[listData.length - 1].id + 1;
     listData.push({
       data: createSentenceListItem(textExample, textExampleTranslate),
@@ -69,7 +83,7 @@ const GuessCard = (props) => {
     });
   }
 
-  if (textMeaning) {
+  if (textMeaning && meaning) {
     const id = listData[listData.length - 1].id + 1;
     listData.push({
       data: createSentenceListItem(textMeaning, textMeaningTranslate),
@@ -88,7 +102,7 @@ const GuessCard = (props) => {
             <Card.Body className={cardBodyClass}>
               <Container>
                 <Row className="crd__image-block">
-                  {image && (
+                  {picture && image && (
                     <Col xs={12} md={6}>
                       <Image
                         src={url}
@@ -117,7 +131,7 @@ const GuessCard = (props) => {
 
               <Row className={cardInputBlockClass}>
                 <Col xs={4}>
-                  {transcription && <h6> {transcription} </h6>}
+                  {transcript && transcription && <h6> {transcription} </h6>}
                   <Form.Group
                     controlId="formGroupCard"
                     style={inputWidth}

@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  position: relative;
   align-items: center;
   justify-content: center;
   &__nav {
@@ -48,6 +49,18 @@
 
     .dropdown-menu {
       position: absolute;
+    }
+  }
+
+  .nav-settings-btn {
+    margin: 15px;
+    cursor: pointer;
+    box-shadow: none;
+    background: none;
+    border: none;
+
+    &:hover {
+      opacity: .3;
     }
   }
 }
