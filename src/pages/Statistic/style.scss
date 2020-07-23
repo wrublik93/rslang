@@ -1,8 +1,21 @@
 .statistic {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+    background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/Statistics/statistics-background.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding: 150px 20px;
+    font-size: 25px;
+
+    .block-statistics-error {
+      width: 60%;
+      background-color: rgb(250, 248, 233);
+      border-radius: 15px;
+      padding: 10px;
+      margin: 0 auto;
+      box-shadow: 10px 15px 39px -7px rgba(0,0,0,0.82);
+      text-align: center;
+    }
 }
 .progressDay{
   margin: 20px 0;

@@ -5,6 +5,35 @@ span.after {
 
 .crd {
   min-height: 300px;
+  border-radius: 15px;
+  background-color: #faf8e9;
+
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .red {
+    color: red
+  }
+
+  .green {
+    color: green;
+  }
+
+  &__sbmBtn {
+    margin: 5px;
+  }
+
+  &__addBtn {
+    margin: 5px 0;
+    color: white;
+
+    &:hover, &:active, &:focus {
+      color: white;
+    }
+  }
 
   &__body {
     display: flex;
@@ -45,7 +74,7 @@ span.after {
   }
 
   &__list > .list-group-item:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: #faf8e9;
   }
   &__input-block {
     margin-top: 5px;

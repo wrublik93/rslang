@@ -182,7 +182,7 @@ const GameAudioChallenge = ({
         <audio src={LinkMed + currentWord.audio} autoPlay="autoplay">
           <track kind="captions" />
         </audio>
-        <div> Score: {point} </div>
+        <div className="audio-challenge-score"> Score: {point} </div>
         <Button onClick={Sound}>
           <img src={ImageWord} className="Image-word" alt="logo" />
         </Button>
@@ -205,6 +205,7 @@ const GameAudioChallenge = ({
             <div className="button-translate">
               <ol>
                 <Button
+                  size="lg"
                   className="button-translate-word"
                   disabled={isDisabled}
                   onClick={() => handlerClickWord(translate[0])}
@@ -212,6 +213,7 @@ const GameAudioChallenge = ({
                   <li>{translate[0]}</li>
                 </Button>
                 <Button
+                  size="lg"
                   className="button-translate-word"
                   disabled={isDisabled}
                   onClick={() => handlerClickWord(translate[1])}
@@ -219,6 +221,7 @@ const GameAudioChallenge = ({
                   <li>{translate[1]}</li>
                 </Button>
                 <Button
+                  size="lg"
                   className="button-translate-word"
                   disabled={isDisabled}
                   onClick={() => handlerClickWord(translate[2])}
@@ -226,6 +229,7 @@ const GameAudioChallenge = ({
                   <li>{translate[2]}</li>
                 </Button>
                 <Button
+                  size="lg"
                   className="button-translate-word"
                   disabled={isDisabled}
                   onClick={() => handlerClickWord(translate[3])}
@@ -233,6 +237,7 @@ const GameAudioChallenge = ({
                   <li>{translate[3]}</li>
                 </Button>
                 <Button
+                  size="lg"
                   className="button-translate-word"
                   disabled={isDisabled}
                   onClick={() => handlerClickWord(translate[4])}
@@ -241,9 +246,11 @@ const GameAudioChallenge = ({
                 </Button>
               </ol>
             </div>
-            <Button className="button-next" onClick={nextWord}>
-              →
-            </Button>
+            <div className="text-center">
+              <Button size="lg" className="button-next" onClick={nextWord}>
+                →
+              </Button>
+            </div>
           </div>
         )}
       </div>

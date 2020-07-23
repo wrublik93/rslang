@@ -17,14 +17,14 @@ const StartPageSprint = ({ setStartGame, setLevel }) => {
 
   return (
     <CommonStartScreen title="Sprint" onStartClick={handleClickStart}>
-      <Card.Body>
+      <Card.Body className="text-center">
         <Card.Title>Learn new words and repeat it</Card.Title>
         <Card.Text>Choose the correct word</Card.Text>
         <Form.Group
           className="selectLevelSprint"
           controlId="exampleForm.SelectCustom"
         >
-          <Form.Label>Select level</Form.Label>
+          <Form.Label>Select level:</Form.Label>
           <Form.Control onChange={isSelect} as="select" custom>
             <option>1</option>
             <option>2</option>

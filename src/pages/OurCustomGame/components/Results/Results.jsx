@@ -20,7 +20,7 @@ function Results({ showResults, setShowResults, correct, incorrect }) {
     <div className={`modal-container ${showResults ? "visible" : ""}`}>
       <div className="modal-container-modalWindow">
         <Button
-          variant="outline-success"
+          variant="success"
           className="modal-container-modalWindow-btn"
           onClick={() => setShowResults(false)}
         >

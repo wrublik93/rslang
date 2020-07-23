@@ -1,14 +1,15 @@
 import classNames from "classnames";
-import "components/GuessCard/style.scss";
-import { useGlobalState } from "store/store";
-import Image from "components/Image/Image";
-import React, { useEffect, useRef } from "react";
-import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import createSentenceListItem from "components/GuessCard/createSentence";
+import { AUDIO_URL } from "pages/EnglishPuzzle/constants";
+import "components/GuessCard/style.scss";
+import Image from "components/Image/Image";
+import { setVocabularyWords } from "store/actions";
+import React, { useEffect, useRef, useState } from "react";
+import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
+import { useGlobalState } from "store/store";
 
 const GuessCard = (props) => {
   const textInput = useRef(null);
-
   const [settings] = useGlobalState("settings");
   const { optional } = settings;
   const {
@@ -17,14 +18,26 @@ const GuessCard = (props) => {
     isWordTranslation,
     isMeaningSentence,
     isExampleSentence,
+    isAutoPronunciation,
+    isShowBtn,
   } = optional;
+  const { wordObj, title, handleAnswer } = props;
+
+  useEffect(() => {
+    const audio = new Audio();
+    if (wordObj.audioExample && isAutoPronunciation) {
+      audio.src = `${AUDIO_URL}${wordObj.audio}`;
+      audio.autoplay = true;
+    }
+    return () => audio.pause();
+  }, [isAutoPronunciation, wordObj]);
 
   useEffect(() => {
     textInput.current.focus();
-  }, []);
+    textInput.current.value = "";
+  }, [wordObj]);
 
   const {
-    title,
     word,
     wordTranslate,
     textExample,
@@ -33,7 +46,9 @@ const GuessCard = (props) => {
     textMeaningTranslate,
     transcription,
     image,
-  } = props;
+  } = wordObj;
+
+  const [inputClass, setInputClass] = useState("");
 
   const cardClass = classNames("crd");
   const cardHeaderClass = classNames("crd__header");
@@ -55,10 +70,25 @@ const GuessCard = (props) => {
   // eslint-disable-next-line max-len
   const url = `https://raw.githubusercontent.com/irinainina/rslang-data/master/${image}`;
   const inputWidth = {
-    width: `calc(${word ? word.length : "4"}rem)`,
+    width: `calc(${word ? word.length : "5"}rem)`,
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    const { input } = event.currentTarget.elements;
+    setInputClass(input.value === wordObj.word ? "green" : "red");
+    handleAnswer(input);
+  };
+
+  const handleChange = () => {
+    setInputClass("");
+  };
+
+  const handleShow = () => {
+    textInput.current.value = wordObj.word;
+  };
+
+  const handleAdd = () => {
+    setVocabularyWords(wordObj);
   };
 
   const listData = [
@@ -132,25 +162,43 @@ const GuessCard = (props) => {
                   {isTranscription && transcription && (
                     <h6> {transcription} </h6>
                   )}
-                  <Form.Group
-                    controlId="formGroupCard"
-                    style={inputWidth}
-                    onSubmit={handleSubmit}
-                  >
-                    <Form.Control
-                      className={cardInputClass}
-                      ref={textInput}
-                      size="lg"
-                      type="text"
-                      maxLength="50"
-                    />
-                  </Form.Group>
+                  <Form onSubmit={handleSubmit}>
+                    <Form.Group controlId="formGroupCard" style={inputWidth}>
+                      <Form.Control
+                        className={`${cardInputClass} ${inputClass}`}
+                        ref={textInput}
+                        name="input"
+                        onChange={handleChange}
+                        size="lg"
+                        type="text"
+                        maxLength="50"
+                      />
+                    </Form.Group>
+                    <Button
+                      className="crd__sbmBtn"
+                      variant="outline-success"
+                      type="submit"
+                    >
+                      &#10004;
+                    </Button>
+                  </Form>
+                  {isShowBtn ? (
+                    <Button
+                      className={cardButtonClass}
+                      variant="primary"
+                      type="button"
+                      onClick={handleShow}
+                    >
+                      Show answer
+                    </Button>
+                  ) : null}
                   <Button
-                    className={cardButtonClass}
-                    variant="primary"
-                    type="submit"
+                    className={`${cardButtonClass} crd__addBtn`}
+                    variant="warning"
+                    onClick={handleAdd}
+                    type="button"
                   >
-                    Next
+                    Add to vocabulary
                   </Button>
                 </Col>
               </Row>
@@ -165,19 +213,6 @@ const GuessCard = (props) => {
 const ListItem = (props) => {
   const { data, className } = props;
   return <li className={className}>{data}</li>;
-};
-
-GuessCard.defaultProps = {
-  title: "Kuznitsa kadrov",
-  word: "adventure",
-  wordTranslate: "приключение",
-  textExample: "Riding in the rough water was an <b>adventure</b>.",
-  textExampleTranslate: "Езда в бурной воде была приключением",
-  textMeaning: "An <i>adventure</i> is a fun or exciting thing that you do.",
-  textMeaningTranslate:
-    "Приключение - это забавная или захватывающая вещь, которую ты делаешь",
-  transcription: "[ədvéntʃər]",
-  image: "files/02_0021.jpg",
 };
 
 export default GuessCard;

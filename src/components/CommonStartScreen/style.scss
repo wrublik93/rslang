@@ -6,10 +6,12 @@ $mainColor: rgb(15, 76, 129);
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 600px;
+  width: 500px;
   box-shadow: 1px 1px 2px $mainColor;
   margin: 0 auto;
-  background-color: white;
+  background-color: rgb(250, 248, 233);
+  border-radius: 30px;
+  box-shadow: 10px 15px 39px -7px rgba(0,0,0,0.82);
 
   @media (max-width: 767px) {
     width: auto;

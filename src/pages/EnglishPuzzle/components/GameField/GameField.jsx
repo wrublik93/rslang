@@ -118,15 +118,12 @@ function GameField({
             continueGame={continueGame}
           />
         ) : (
-          <Button variant="outline-info" onClick={know}>
+          <Button variant="info" onClick={know}>
             I don`t know
           </Button>
         )}
         {raundIsFinished ? (
-          <Button
-            variant="outline-success"
-            onClick={() => setShowResults(true)}
-          >
+          <Button variant="success" onClick={() => setShowResults(true)}>
             Results
           </Button>
         ) : null}

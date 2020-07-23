@@ -1,15 +1,53 @@
 .home {
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/HomePage/home-page-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+
   &__row {
     display: flex;
     align-items: center;
   }
   &__card {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     min-width: 250px;
     max-width: 500px;
-    margin-top: 15px;
+    margin-top: 50px;
+    border: none;
+    border-radius: 30px;
+    box-shadow: 10px 15px 39px -7px rgba(0,0,0,0.82);
+  }
+
+  &__card-body {
+    font-size: 20px;
+    color: #8c9c9f;
+    text-align: center;
+    :hover {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
   }
 
   &__card-deck {
     justify-content: center;
   }
+
+  &__image {
+    padding: 20px 10px 0;
+    width: 60%;
+  }
+
+  &__image-container {
+    height: 50px;
+  }
+
+  &__container {
+    width: 100%;
+    align-items: center;
+   justify-content: center;
+  }
 }
+

@@ -1,19 +1,19 @@
 .helper-container {
-  width: 80%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 
   @media(max-width: 767px) {
-    width: 70%;
+    width: 100%;
   }
 
   @media(max-width: 479px) {
-    width: 50%;
+    width: 100%;
   }
 
   &-helperData  {
-    color: rgb(4, 5, 83);
+    color: white;
     font-size: 18px;
     text-align: center;
     padding: 0 10px;

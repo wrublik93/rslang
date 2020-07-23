@@ -31,7 +31,9 @@ const Savanna = () => {
 
   return (
     <div className="savanna">
-      {spinnerVisible && <Loading setSpinnerVisible={setSpinnerVisible} />}
+      <div className="text-center">
+        {spinnerVisible && <Loading setSpinnerVisible={setSpinnerVisible} />}
+      </div>
       {!spinnerVisible && (
         <div className="wrapper">
           <HeaderSavanna

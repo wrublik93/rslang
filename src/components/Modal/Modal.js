@@ -11,7 +11,7 @@ function Modal({ setShowModal }) {
     maxWords,
     isMixWords,
     isPicture,
-    isTranscript,
+    isTranscription,
     isAutoPronunciation,
     isShowBtn,
     isWordTranslation,
@@ -146,8 +146,8 @@ function Modal({ setShowModal }) {
           />
           <Form.Check
             label="show transcript"
-            name="isTranscript"
-            checked={isTranscript}
+            name="isTranscription"
+            checked={isTranscription}
             onChange={handleCheckboxSetSettings}
             type="checkbox"
             id="checkbox-6"

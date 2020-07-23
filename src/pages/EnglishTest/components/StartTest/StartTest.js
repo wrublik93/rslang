@@ -12,11 +12,11 @@ const StartTest = ({ setStartTest, userLevel }) => {
     history.push(`/${path}`);
   };
   return (
-    <Card className="text-center">
+    <Card className="text-center cards-test">
       {!userLevel && (
         <>
           <Card.Header className="header-card-test">Test</Card.Header>
-          <Card.Body>
+          <Card.Body className="card-body-test-color">
             <Card.Title>
               This test will determine your approximate level of English
             </Card.Title>

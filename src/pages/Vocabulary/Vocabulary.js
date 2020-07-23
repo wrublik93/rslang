@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import "pages/Vocabulary/style.scss";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom"; */
+import { useGlobalState } from "store/store";
 import Word from "pages/Vocabulary/components/Word";
-import * as wordsSnapshot from "pages/Vocabulary/wordsSnapshot.json";
+// import * as wordsSnapshot from "pages/Vocabulary/wordsSnapshot.json";
 
 const Vocabulary = () => {
   const [vocabularyWords, setVocabularyWords] = useState("learningWords");
   const transcriptionVisible = true;
   const imageVisible = true;
 
-  const [learningWords, setLearningWords] = useState(wordsSnapshot.default);
+  const [userWords] = useGlobalState("vocabularyWords");
+  const [learningWords, setLearningWords] = useState(userWords);
   const [arrDeletedWords, setArrDeletedWords] = useState([]);
 
   const allWords = learningWords.map((el, index) => (
@@ -43,7 +45,7 @@ const Vocabulary = () => {
   return (
     <div className="vocabulary">
       <div className="menu__buttons">
-        <Button
+        {/*  <Button
           variant="dark"
           className="button-exit"
           onClick={() => setVocabularyWords("learningWords")}
@@ -51,25 +53,23 @@ const Vocabulary = () => {
           <Link to="/home" className="home-page__link">
             Main menu
           </Link>
-        </Button>
+        </Button> */}
         <div>
           <Button
-            variant="dark"
-            className="button-learningWords active"
+            variant="warning"
             onClick={() => setVocabularyWords("learningWords")}
           >
             Learning words
           </Button>
           <Button
-            variant="dark"
+            variant="warning"
             className="button-difficultWords"
             onClick={() => setVocabularyWords("difficultWords")}
           >
             Difficult words
           </Button>
           <Button
-            variant="dark"
-            className="button-deletedWords"
+            variant="danger"
             onClick={() => setVocabularyWords("deletedWords")}
           >
             Deleted words

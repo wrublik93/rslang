@@ -11,3 +11,9 @@ export const settingCookie = (cookie) => {
 export const settingSettings = (newState) => {
   setGlobalState("settings", () => newState);
 };
+
+export const setVocabularyWords = (word) => {
+  setGlobalState("vocabularyWords", (state) => {
+    return state.find((item) => item.id === word.id) ? state : [...state, word];
+  });
+};

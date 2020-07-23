@@ -9,11 +9,9 @@ import { useGlobalState } from "store/store";
 import Modal from "components/Modal";
 import Logo from "components/Logo";
 
-import Settings from "assets/Settings.svg";
-
 import "components/Header/style.scss";
 
-const Header = ({ userLevel }) => {
+const Header = () => {
   const [user, setUser] = useGlobalState("user");
   const [showModal, setShowModal] = useState(false);
 
@@ -26,127 +24,102 @@ const Header = ({ userLevel }) => {
   };
 
   return (
-    <header className="header">
-      <Navbar className="header__nav" bg="dark" variant="dark" expand="lg">
-        <Navbar.Brand>
-          <Nav.Link as={Link} to="/home" className="nav-link">
-            <h1 className="header__title">
-              <Logo className="logo-size_small" />
-              <span className="ml-2">RS Lang</span>
-            </h1>
-          </Nav.Link>
-        </Navbar.Brand>
+    <>
+      {user.email && (
+        <>
+          <Navbar bg="dark" variant="dark" expand="xl">
+            <Navbar.Brand as={Link} to="/home" className="brand">
+              <Logo className="logo-size_small mr-2" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <>
+                <Nav className="mr-auto">
+                  <div className="flex">
+                    <Nav.Link
+                      as={Link}
+                      to="/games"
+                      className={classNames(
+                        "link-games",
+                        "bg-warning",
+                        "text-body",
+                        "d-flex",
+                        "justify-content-center",
+                        "align-items-center"
+                      )}
+                    >
+                      Games
+                    </Nav.Link>
+                    <NavDropdown
+                      title=""
+                      className={classNames(
+                        "dropdown-games",
+                        "bg-warning",
+                        "justify-content-center",
+                        "align-items-center"
+                      )}
+                    >
+                      <NavDropdown.Item as={Link} to="/speakIt">
+                        Speak It
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/englishPuzzle">
+                        English Puzzle
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/savanna">
+                        Savannah
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/audioChallenge">
+                        Audio Challenge
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/sprint">
+                        Sprint
+                      </NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/ourCustomGame">
+                        Memory Game
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </div>
 
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <div className="nav-item">
-              <Nav.Link
-                as={Link}
-                to="/games"
-                className="nav-link bg-primary text-white"
-              >
-                Games
-              </Nav.Link>
-
-              <NavDropdown title="" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  as={Link}
-                  to="/speakIt"
-                  className={classNames("link", "dropdown-item")}
+                  <Nav.Link as={Link} to="/vocabulary">
+                    Vocabulary
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/guess">
+                    Learn Words
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/statistic">
+                    Statistics
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/aboutUs">
+                    About Us
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/englishTest">
+                    Test
+                  </Nav.Link>
+                  <Nav.Link onClick={() => setShowModal(!showModal)}>
+                    Settings
+                  </Nav.Link>
+                </Nav>
+              </>
+              <>
+                <Navbar.Text className="mr-1">User:</Navbar.Text>
+                <Navbar.Text className="header-user-email">
+                  {user.email}
+                </Navbar.Text>
+                <Button
+                  size="sm"
+                  variant="warning"
+                  className="ml-2"
+                  onClick={handleLogout}
                 >
-                  Speak it
-                </NavDropdown.Item>
-
-                <NavDropdown.Item
-                  as={Link}
-                  to="/englishPuzzle"
-                  className={classNames("link", "dropdown-item")}
-                >
-                  English puzzle
-                </NavDropdown.Item>
-
-                <NavDropdown.Item
-                  as={Link}
-                  to="/savanna"
-                  className={classNames("link", "dropdown-item")}
-                >
-                  Savanna
-                </NavDropdown.Item>
-
-                <NavDropdown.Item
-                  as={Link}
-                  to="/audioChallenge"
-                  className={classNames("link", "dropdown-item")}
-                >
-                  Audio challenge
-                </NavDropdown.Item>
-
-                <NavDropdown.Item
-                  as={Link}
-                  to="/sprint"
-                  className={classNames("link", "dropdown-item")}
-                >
-                  Sprint
-                </NavDropdown.Item>
-
-                <NavDropdown.Item
-                  as={Link}
-                  to="/ourCustomGame"
-                  className={classNames("link", "dropdown-item")}
-                >
-                  Our custom game
-                </NavDropdown.Item>
-              </NavDropdown>
-            </div>
-
-            <Nav.Link as={Link} to="/vocabulary" className="nav-link">
-              Vocabulary
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/guess" className="nav-link">
-              Learn Words
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/statistic" className="nav-link">
-              Statistics
-            </Nav.Link>
-
-            <Nav.Link as={Link} to="/aboutUs" className="nav-link">
-              About Us
-            </Nav.Link>
-            {!userLevel ? (
-              <Nav.Link as={Link} to="/englishTest" className="nav-link">
-                Test
-              </Nav.Link>
-            ) : (
-              <Navbar.Text>{userLevel} </Navbar.Text>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-        {user.email && (
-          <button
-            type="button"
-            className="nav-settings-btn"
-            onClick={() => setShowModal(!showModal)}
-          >
-            <img src={Settings} alt="settings" />
-          </button>
-        )}
-        <Navbar.Text>
-          {user.email && (
-            <>
-              <div>Signed in as:</div>
-              <div className="text-success">{user.email}</div>
-              <Button variant="danger" onClick={handleLogout}>
-                Logout
-              </Button>
-            </>
-          )}
-        </Navbar.Text>
-      </Navbar>
-      {showModal ? <Modal setShowModal={setShowModal} /> : null}
-    </header>
+                  Logout
+                </Button>
+              </>
+            </Navbar.Collapse>
+          </Navbar>
+          {showModal ? <Modal setShowModal={setShowModal} /> : null}
+        </>
+      )}
+    </>
   );
 };
 

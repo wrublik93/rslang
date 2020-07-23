@@ -1,13 +1,14 @@
 .sprint {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  margin: 50px 0;
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/Sprint/imgSprint/sprint-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
 }
 
 @media screen and (max-width: 620px) {
   .sprint {
     width: 100%;
-    margin: 20px 0;
   }
 }

@@ -24,6 +24,7 @@ const initialState = {
       isHardWordBtn: true,
     },
   },
+  vocabularyWords: [],
 };
 
 export const { useGlobalState, setGlobalState } = createGlobalState(

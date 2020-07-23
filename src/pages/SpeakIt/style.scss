@@ -1,12 +1,21 @@
  .speak-it-main {
-  width: 100%;
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/SpeakIt/speak-it-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
  }
 
- .speak-it-game {
-   /* width: 100%;
-   background: url('../../assets/speakIt/imgSpeakIt/background-black.jpg') no-repeat center center fixed;
-  background-size: cover; */
-}
+/*  .speak-it-game {
+   width: 100%;
+   background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/HomePage/home-page-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+} */
 
  .speak-it-wrapper {
   max-width: 1020px;

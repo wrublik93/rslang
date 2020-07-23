@@ -1,0 +1,88 @@
+.registration {
+  padding: 20px;
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/StartPage/registration-background.jpg");
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .registration-buttons {
+    text-align: right;
+    Button {
+      width: 120px;
+    }
+  }
+  .registration-container {
+    margin-top: 160px;
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+    text-align: center;
+    .registration-description {
+      margin-top: 30px;
+      font-size: 36px;
+      font-weight: 700;
+    }
+  }
+  @media (max-width: 1000px) {
+    .registration-container {
+      margin-top: 130px;
+    }
+  };
+  @media (max-width: 800px) {
+    .registration-container {
+      margin-top: 110px;
+      font-size: 30px;
+      .registration-description {
+        margin-top: 30px;
+        font-size: 26px;
+        font-weight: 700;
+      }
+    }
+  };
+  @media (max-width: 400px) {
+    .registration-buttons {
+      text-align: center;
+    }
+    .registration-container {
+      margin-top: 90px;
+      font-size: 26px;
+      .registration-description {
+        margin-top: 30px;
+        font-size: 20px;
+        font-weight: 700;
+      }
+    }
+  };
+}
+
+.registration-features,
+.registration-mini-games {
+  padding: 20px;
+  text-align: center;
+  .registration-features-title,
+  .registration-mini-games-title {
+    margin: 10px 0;
+    font-size: 40px;
+    font-weight: 700;
+    @media (max-width: 800px) {
+      font-size: 30px;
+    }
+  }
+  .registration-features-words-title,
+  .registration-features-online-title {
+    margin: 20px 0;
+    font-size: 30px;
+    font-weight: 600;
+    @media (max-width: 800px) {
+      font-size: 26px;
+    }
+  }
+  .registration-features-words-description,
+  .registration-features-online-description {
+    margin-top: 20px;
+    font-size: 18px;
+    @media (max-width: 800px) {
+      font-size: 16px;
+    }
+  }
+}

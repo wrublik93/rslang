@@ -3,8 +3,8 @@
     "id": "1",
     "name": "Vladimir",
     "surname": "Panteleev",
-    "position": "Project Manager",
-    "contribution": "vacant seat for your work",
+    "position": "Mentor",
+    "contribution": "Mentoring, coordination",
     "contacts": [
       {
         "link": "https://github.com/vpanteleev",
@@ -17,7 +17,7 @@
     "name": "Alexey",
     "surname": "Koren",
     "position": "Team Lead",
-    "contribution": "vacant seat for your work",
+    "contribution": "Start structure/configuration. Register/Logout. Backend/cookie. Code reviews. Header/About us",
     "contacts": [
       {
         "link": "https://github.com/Alexey-Koren",
@@ -30,7 +30,7 @@
     "name": "Ivan",
     "surname": "Vrubleuski",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Implement SpeakIt, whole design of the project",
     "contacts": [
       {
         "link": "https://github.com/wrublik93",
@@ -43,7 +43,7 @@
     "name": "Anastasia",
     "surname": "Savich",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Implement EnglishPuzzle, MemoryGame, Settings, Header, Page 404, Games StartScreen",
     "contacts": [
       {
         "link": "https://github.com/savichanastasia",
@@ -56,7 +56,7 @@
     "name": "Konstantsin",
     "surname": "Yakimovich",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Implement Sprint, English test",
     "contacts": [
       {
         "link": "https://github.com/kostyayakimovich",
@@ -69,7 +69,7 @@
     "name": "Evgeniya",
     "surname": "Ivanova",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Implement Savannah, Vocabulary",
     "contacts": [
       {
         "link": "https://github.com",
@@ -82,7 +82,7 @@
     "name": "Yuriy",
     "surname": "Shilenkov",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Learn words. About us. Home/Games pages. Header",
     "image": "assets/images/about-us-page/yuriy.jpeg",
     "contacts": [
       {
@@ -96,7 +96,7 @@
     "name": "Alesya",
     "surname": "Zarembo",
     "position": "Developer",
-    "contribution": "vacant seat for your work",
+    "contribution": "Audio challenge. Code improves",
     "contacts": [
       {
         "link": "https://github.com/alesyaz",

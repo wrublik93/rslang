@@ -2,11 +2,11 @@
   width: 60px;
 }
 .logo-size_small {
-  width: 40px;
-  @media (max-width: 576px) {
+  width: 100px;
+  /* @media (max-width: 576px) {
     width: 30px;
   }
   @media (max-width: 400px) {
     width: 20px;
-  }
+  } */
 }

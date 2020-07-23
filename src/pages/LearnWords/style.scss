@@ -1,0 +1,17 @@
+.learn-words{
+  &__container {
+    background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/LearWords/learn-words-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
+  }
+
+  &__progress-bar{
+    margin-top: 50px !important;
+  }
+  &__guess-card-words{
+    border-radius: 60px;
+  }
+}

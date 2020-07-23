@@ -6,7 +6,7 @@ import { useCookies } from "react-cookie";
 
 import { routeNamesMap } from "constants/constants";
 
-import GuessCard from "components/GuessCard";
+import LearnWords from "pages/LearnWords";
 import Header from "components/Header";
 import Main from "components/Main";
 import AboutUs from "pages/AboutUs";
@@ -115,7 +115,7 @@ const App = () => {
             {!userStore.authStatus && <Registration />}
           </Route>
           <Route path="/englishTest" />
-          <Route path="/guess" component={GuessCard}>
+          <Route path="/guess" component={LearnWords}>
             {!userStore.authStatus && <Registration />}
           </Route>
 

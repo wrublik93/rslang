@@ -1,8 +1,8 @@
 .our-custom-game {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 118px);
-  width: 100%;
-  background-color: #F0EDE6;
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/OurCustomGame/memory-game-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
 }

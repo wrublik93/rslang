@@ -5,40 +5,65 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
     .name{
       font-size: 1.5rem;
     }
+
     .surname{
       font-size: 1rem;
+    }
+
+    .contribution {
+      font-size: 1rem;
+      padding-top: 0.5rem;
     }
   }
 
   &__card{
-    min-width: 210px;
-    max-width: 210px;
+    min-width: 550px;
+    max-width: 550px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     border: none;
     box-shadow: 0px 1px 5px;
     padding-top: 10px;
     margin-top: 30px;
+    background-color: #faf8e9;
+    border-radius: 30px;
+    box-shadow: 10px 15px 39px -7px rgba(0, 0, 0, 0.82);
+    &-body {
+      background-color: #faf8e9;
+    }
   }
 
   &__description-block{
     display: flex;
     flex-direction: column;
     align-items: center;
-    h5{
+
+    h5 {
       font-size: 1.2rem;
     }
-    p{
+
+    p {
       font-size: 1rem;
       text-align: center;
     }
   }
 
   &__image{
-    width: 75%;
+    width: 30%;
+    padding: 1rem;
   }
+}
+
+.container-about {
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/SpeakIt/speak-it-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
 }

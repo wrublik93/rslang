@@ -24,14 +24,14 @@ const GameOverAudioCall = ({ rightAnswers, wrongAnswers, resultScore }) => {
       </Card>
       <Button onClick={() => handleOnClick("home")}>Home</Button>
       <div className="result-buttons">
-        <Button variant="outline-light" onClick={() => handlerClickCheck(true)}>
+        <Button variant="success" onClick={() => handlerClickCheck(true)}>
           right answers
         </Button>
-        <Button variant="outline-dark" onClick={() => handlerClickCheck(false)}>
+        <Button variant="danger" onClick={() => handlerClickCheck(false)}>
           wrong answers
         </Button>
       </div>
-      <div>
+      <div className="audio-challenge-results">
         {isArrayWords === true &&
           rightAnswers.map((item) => (
             <div key={item.word}>

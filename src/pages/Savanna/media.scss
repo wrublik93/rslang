@@ -1,3 +1,9 @@
+.instruction {
+  background-color: #faf8e9;
+  border: white solid 2px;
+  border-radius: 20px;
+}
+
 @media (max-width: 1000px) {
    .intro-container{
         padding: 0
@@ -90,7 +96,7 @@
   }
   .results-button {
     font-size: 15px;
-    width: 260px;
+    width: 200px;
     margin: 5px auto;
   }
 

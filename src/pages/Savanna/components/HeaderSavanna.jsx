@@ -3,8 +3,8 @@ import "pages/Savanna/style.scss";
 import StarsContainer from "pages/Savanna/components/game/StarsContainer";
 
 export default function HeaderSavanna({
-  setModalWindowVisible,
-  setSoundState,
+  /*  setModalWindowVisible,
+  setSoundState, */
   soundState,
   starVisible,
   numberOfStars,
@@ -18,21 +18,21 @@ export default function HeaderSavanna({
 
   return (
     <div className="header-savanna">
-      <button
+      {/* <button
         type="button"
         className={soundClassName.join(" ")}
         onClick={() => setSoundState(!soundState)}
       >
         sound
-      </button>
+      </button> */}
       {starVisible && <StarsContainer numberOfStars={numberOfStars} />}
-      <button
+      {/* <button
         type="button"
         className="close-savanna"
         onClick={() => setModalWindowVisible(true)}
       >
         <span>&times;</span>
-      </button>
+      </button> */}
     </div>
   );
 }

@@ -152,9 +152,9 @@ const Test = ({ setRightAnswer, setWrongAnswer, setEndTest }) => {
   return (
     <>
       <div className="test">
-        <Card className="text-center">
+        <Card className="text-center cards-test">
           <Card.Header className="header-card-test">Test</Card.Header>
-          <Card.Body>
+          <Card.Body className="card-body-test-color">
             {isLoading ? (
               <Spinner animation="border" variant="primery" />
             ) : (

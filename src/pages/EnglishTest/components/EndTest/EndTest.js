@@ -51,11 +51,11 @@ const EndTest = ({
   }, [resultTest, setLevel, setUserLevel]);
   return (
     <>
-      <Card className="text-center">
+      <Card className="text-center cards-test">
         <Card.Header className="header-gameover-sprint">
           Cool result
         </Card.Header>
-        <Card.Body>
+        <Card.Body className="card-body-test-color">
           <Card.Title>Your level {level} </Card.Title>
           <Card.Text>I like you</Card.Text>
 

@@ -56,7 +56,7 @@ function Helper({ word, setImg, level, raund, raundIsOver }) {
       </div>
       <div className="helper-container-tools">
         <Button
-          variant="outline-info"
+          variant="info"
           className={`helper-container-tools-helperItem translate-btn
             ${translation ? "on" : ""}`}
           onClick={translate}
@@ -64,7 +64,7 @@ function Helper({ word, setImg, level, raund, raundIsOver }) {
           <Earth />
         </Button>
         <Button
-          variant="outline-info"
+          variant="info"
           className={`helper-container-tools-helperItem
           ${pronunciation ? "on" : ""}`}
           onClick={pronounceWord}
@@ -72,7 +72,7 @@ function Helper({ word, setImg, level, raund, raundIsOver }) {
           <Speak />
         </Button>
         <Button
-          variant="outline-info"
+          variant="info"
           className={`helper-container-tools-helperItem image-btn
           ${visibleImage ? "on" : ""}`}
           onClick={showImage}

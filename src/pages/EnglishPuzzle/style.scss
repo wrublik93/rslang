@@ -1,12 +1,10 @@
 .english-puzzle {
-  display: flex;
-  background-color: rgba(219, 203, 189, .7);
+  background-color: rgba(99, 85, 73, 0.7);
   width: 100%;
-   height: calc(100vh - 118px);
-  align-items: center;
-  justify-content: center;
-
-  @media(max-width: 479px){
-    padding: 0 10px;
-  }
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/EnglishPuzzle/english-puzzle-background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
 }

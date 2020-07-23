@@ -16,7 +16,7 @@ const GameOverSprint = ({ rightAnswers, wrongAnswers, resultScore }) => {
 
   return (
     <>
-      <Card className="text-center">
+      <Card className="text-center sprint-end-game">
         <Card.Header className="header-gameover-sprint">GAME OVER</Card.Header>
         <Card.Body>
           <Card.Title>Your result {resultScore} points</Card.Title>
@@ -32,21 +32,21 @@ const GameOverSprint = ({ rightAnswers, wrongAnswers, resultScore }) => {
       </Card>
       <div className="result-buttons">
         <Button
-          variant="outline-success"
+          variant="success"
           className="button-sprint"
           onClick={() => handlerClickCheck(true)}
         >
           right answers
         </Button>
         <Button
-          variant="outline-danger"
+          variant="danger"
           className="button-sprint"
           onClick={() => handlerClickCheck(false)}
         >
           wrong answers
         </Button>
       </div>
-      <ListGroup>
+      <ListGroup className="sprint-list-group">
         {isArrayWords === 1 &&
           rightAnswers.map((item) => (
             <ListGroup.Item key={item.word}>

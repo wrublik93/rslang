@@ -46,13 +46,10 @@ function MainContainer({ words, changeLevel }) {
       <div className={`main-container-end ${gameIsOver ? "full" : ""}`}>
         <img alt="congratulations" src={imageWinUrl} />
         <div className="main-container-end-btns">
-          <Button variant="outline-success" onClick={changeLevel}>
+          <Button variant="success" onClick={changeLevel}>
             Next
           </Button>
-          <Button
-            variant="outline-success"
-            onClick={() => setShowResults(true)}
-          >
+          <Button variant="success" onClick={() => setShowResults(true)}>
             Results
           </Button>
         </div>

@@ -44,9 +44,10 @@
     opacity: 0.5;
 }
 
-.button-translate {
-  margin: 10px;
-}
+/* .button-translate {
+  display: flex;
+  flex-direction: row;
+} */
 
 .button-translate-word {
   margin: 10px;
@@ -77,6 +78,7 @@
   width: 100px;
   height: 40px;
   font-size: 20px;
+  line-height: 20px;
 }
 
 .GameOver-text {
@@ -91,10 +93,7 @@
   background-color: #d6feff;
 }
 
-.audio-challenge {
-  display: flex;
-  text-align: center;
-}
+
 
 .Image-word {
   height: 10vh;
@@ -102,17 +101,13 @@
 }
 
 .App-header {
-  background-image: url("../../../assets/AudioChallenge/image/backGame.png");
+  background-image: url("https://raw.githubusercontent.com/Alexey-Koren/rslang/assets/assets/AudioChallenge/audio-challenge-background.jpg");
+  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: calc(100vh - 118px);
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding: 30px 20px;
+  width: 100%;
 }
 
 .App-link {
@@ -128,4 +123,19 @@
 
 .word-list li {
   margin: 5%;
+}
+
+.word-english,
+.audio-challenge-score {
+  background-color: #007bff;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.audio-challenge-results {
+  background-color: #d6feff;
+  border-radius: 10px;
+  padding: 10px;
 }

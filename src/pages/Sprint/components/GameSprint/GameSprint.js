@@ -184,70 +184,72 @@ const GameSprint = ({
           }
         />
       </div>
-      <Card className="bg-dark text-white">
-        <Card.Img
-          className="img-bacground-sprint"
-          src={Sprinter}
-          alt="Card image"
-        />
-        <Card.ImgOverlay>
-          <Card.Title
-            className={
-              responseUser === "Wrong!!!"
-                ? "title-sprint-wrong"
-                : "title-sprint"
-            }
-          >
-            {counterExtraPoints > 0
-              ? `+ ${counterExtraPoints} points`
-              : responseUser}
-          </Card.Title>
-          <div className="head-sprint">
-            {" "}
-            <Card.Text>Score: {point}</Card.Text>
-            {isLoading ? (
-              <Spinner animation="border" variant="light" />
-            ) : (
-              <Card.Text>{seconds}</Card.Text>
-            )}
-            <Image
-              className="sound-sprint"
-              onClick={handlerSwichSound}
-              src={sound ? onSound : offSound}
-              alt="sound-icon"
-            />
-          </div>
-          <div className="game-content-sprint">
-            <Card.Title>{currentWord.word}</Card.Title>
-            <Card.Title className="translate-sprint">{translate}</Card.Title>
-          </div>
-          <div className="control-buttons">
-            <Button
-              variant="outline-danger"
-              className="wrong-button-sprint"
-              onClick={() => handlerClickCheck(false)}
+      <div className="card-game-sprint-container">
+        <Card className="bg-dark text-white card-game-sprint">
+          <Card.Img
+            className="img-bacground-sprint"
+            src={Sprinter}
+            alt="Card image"
+          />
+          <Card.ImgOverlay>
+            <Card.Title
+              className={
+                responseUser === "Wrong!!!"
+                  ? "title-sprint-wrong"
+                  : "title-sprint"
+              }
             >
-              FALSE
-            </Button>
-            <Button
-              variant="outline-success"
-              className="right-button-sprint"
-              onClick={() => handlerClickCheck(true)}
-            >
-              TRUE
-            </Button>
-          </div>
-          <div className="progress-sprint">
-            {" "}
-            <ProgressBar
-              className="progress"
-              variant="warning"
-              max={60}
-              now={seconds}
-            />
-          </div>
-        </Card.ImgOverlay>
-      </Card>
+              {counterExtraPoints > 0
+                ? `+ ${counterExtraPoints} points`
+                : responseUser}
+            </Card.Title>
+            <div className="head-sprint">
+              {" "}
+              <Card.Text>Score: {point}</Card.Text>
+              {isLoading ? (
+                <Spinner animation="border" variant="light" />
+              ) : (
+                <Card.Text>{seconds}</Card.Text>
+              )}
+              <Image
+                className="sound-sprint"
+                onClick={handlerSwichSound}
+                src={sound ? onSound : offSound}
+                alt="sound-icon"
+              />
+            </div>
+            <div className="game-content-sprint">
+              <Card.Title>{currentWord.word}</Card.Title>
+              <Card.Title className="translate-sprint">{translate}</Card.Title>
+            </div>
+            <div className="control-buttons">
+              <Button
+                variant="outline-danger"
+                className="wrong-button-sprint"
+                onClick={() => handlerClickCheck(false)}
+              >
+                FALSE
+              </Button>
+              <Button
+                variant="outline-success"
+                className="right-button-sprint"
+                onClick={() => handlerClickCheck(true)}
+              >
+                TRUE
+              </Button>
+            </div>
+            <div className="progress-sprint">
+              {" "}
+              <ProgressBar
+                className="progress"
+                variant="warning"
+                max={60}
+                now={seconds}
+              />
+            </div>
+          </Card.ImgOverlay>
+        </Card>
+      </div>
     </>
   );
 };

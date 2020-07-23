@@ -1,6 +1,7 @@
 .header-gameover-sprint{
   background-color:#0f4c81 ;
   color: #ffffff;
+  width: 100%;
 }
 .result-buttons{
   display: flex;
@@ -18,4 +19,30 @@
 .home-button-sprint:hover{
   background-color: #0f4c81;
   color: #ffffff;
+}
+
+
+.sprint-end-game {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+  background-color: rgb(250, 248, 233);
+  border-radius: 30px;
+  box-shadow: 10px 15px 39px -7px rgba(0,0,0,0.82);
+  @media (max-width: 767px) {
+    width: auto;
+  }
+}
+
+.sprint-list-group {
+  width: 500px;
+  margin: 0 auto;
+  box-shadow: 10px 15px 39px -7px rgba(0,0,0,0.82);
+  @media (max-width: 767px) {
+    width: auto;
+  }
 }

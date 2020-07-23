@@ -1,5 +1,6 @@
 import "pages/AboutUs/style.scss";
 import React from "react";
+import classNames from "classnames";
 import { Container, Row, CardDeck, Card, Col } from "react-bootstrap";
 import participants from "pages/AboutUs/participants";
 
@@ -24,15 +25,15 @@ const AboutUs = () => {
     alesya,
   ];
   return (
-    <Container fluid className="pb-4">
+    <Container fluid className="pb-4 container-about">
       <Row className="justify-content-center">
-        <Col xs={7} lg={7} xl={7}>
-          <CardDeck className="participants">
+        <Col xs={7} lg={7} xl={8}>
+          <CardDeck className="participants ">
             {participants &&
               participants.map((participant) => {
                 return (
                   <Card
-                    className="participants__card"
+                    className="participants__card back-about"
                     key={participant.id}
                     bg="light"
                   >
@@ -41,14 +42,25 @@ const AboutUs = () => {
                       variant="top"
                       src={images[participant.id - 1]}
                     />
-                    <Card.Body>
+                    <Card.Body className="back-about">
                       <Card.Title>
                         <h2 className="participants__title">
                           <span className="name">{participant.name}</span>
                           <span className="surname">{participant.surname}</span>
+                          <span className="contribution">
+                            {participant.contribution}
+                          </span>
                         </h2>
                       </Card.Title>
-                      <Card.Text className="participants__description-block h5">
+                      <Card.Text
+                        className={classNames(
+                          "participants__description-block",
+                          "h5",
+                          "bg-warning",
+                          "font-weight-bold",
+                          "text-center"
+                        )}
+                      >
                         {participant.position}
                       </Card.Text>
                     </Card.Body>

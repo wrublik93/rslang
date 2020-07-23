@@ -5,15 +5,15 @@ function BtnsGroup({ isCorrect, check, know, continueGame }) {
   return (
     <>
       {isCorrect ? (
-        <Button variant="outline-danger" onClick={continueGame}>
+        <Button variant="danger" onClick={continueGame}>
           Continue
         </Button>
       ) : (
         <div>
-          <Button variant="outline-danger" onClick={check}>
+          <Button variant="danger" onClick={check}>
             Check
           </Button>
-          <Button variant="outline-info" onClick={know}>
+          <Button variant="info" onClick={know}>
             I don`t know
           </Button>
         </div>

@@ -9,7 +9,7 @@ function ResultItem({ text, audio, speakItem }) {
       <div className="resultItem-container-text">{text}</div>
       <Button
         className="resultItem-container-btn"
-        variant="outline-info"
+        variant="info"
         size="sm"
         onClick={() => speakItem(audio)}
       >
